@@ -10,7 +10,7 @@ package com.lsh.day01;
  * 遍历找到最小值 放在索引为3的位置....
  *
  */
-public class Code03_SelectSort {
+public class SelectSort {
 
     public static void main(String[] args) {
         int[] arr = {2, 5, 7, 2, 3, 7, 1, 4, 9};
