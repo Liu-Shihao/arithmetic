@@ -3,7 +3,7 @@ package com.lsh.day01;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/1/26 4:56 下午
- * @desc ： 选择排序
+ * @desc ： 选择排序：找到最小值直接交换
  * 遍历找到最小值 放在索引为0的位置
  * 遍历找到最小值 放在索引为1的位置
  * 遍历找到最小值 放在索引为2的位置

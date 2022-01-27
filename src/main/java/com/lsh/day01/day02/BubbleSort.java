@@ -3,7 +3,8 @@ package com.lsh.day01.day02;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/1/27 9:52 上午
- * @desc ：冒泡排序
+ * @desc ：冒泡排序：两两比较交换
+ *
  */
 public class BubbleSort {
 
