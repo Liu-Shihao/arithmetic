@@ -60,7 +60,7 @@ public class Code01 {
             }
         }
         System.out.println((double)count/(double)totalCount);
-        System.out.println(Math.pow(x,3));
+        System.out.println(1 - Math.pow((1 - x),3));
         System.out.println("=================");
     }
     /**
@@ -70,12 +70,22 @@ public class Code01 {
      * 返回0~0.3 范围的数是0.3    即 返回0-x范围的数的概率是x
      * 现在改为返回0-x范围的数的概率是x的平方
      * 即 使用Math.max函数，
+     * 原理：两次随机数中的最大值都在0~x范围里，则两个随机数都在0~x范围里，所以 0~x范围的概率为 x的平方
      * @return
      */
     public static double xToXPower2(){
         return Math.max(Math.random(),Math.random());
     }
+
+    /**
+     * 现调整为Math.min函数 实现 返回0-x范围的数的概率是x的立方
+     * 原理：
+     * 随机数落在0~x范围内的概率为x,则不在0~x范围内的概率为 1-x
+     * 两次随机数中的最小值不在0~x范围内，则两个随机数都不在0~x范围内，
+     * 所以不在0~x范围内的概率为 （1-x）^3，所以落在0~x范围内的概率为 1 - (1-x）^3
+     * @return
+     */
     public static double xToXPower3(){
-        return Math.max(Math.random(),Math.max(Math.random(),Math.random()));
+        return Math.min(Math.random(),Math.min(Math.random(),Math.random()));
     }
 }
