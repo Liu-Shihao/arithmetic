@@ -1,4 +1,4 @@
-package com.lsh.day01.day02;
+package com.lsh.day02;
 
 /**
  * @author ：LiuShihao
@@ -49,7 +49,7 @@ public class BubbleSort {
 
 //冒泡算法 简单写法：
 //        for (int i = 0; i < arr.length; i++) {
-//            for (int j = 0; j < arr.length-1; j++) {
+//            for (int j = 0; j < arr.length-1-i; j++) {
 //                if (arr[j] > arr[j+1]){
 //                    swap(arr,j+1,j);
 //                }

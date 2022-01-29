@@ -1,4 +1,4 @@
-package com.lsh.day01.day02;
+package com.lsh.day02;
 
 /**
  * @author ：LiuShihao
