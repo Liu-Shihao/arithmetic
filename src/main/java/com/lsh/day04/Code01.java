@@ -3,7 +3,10 @@ package com.lsh.day04;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/1/31 1:37 下午
- * @desc ：二分法：找出有序数组中的num
+ * @desc ：二分法：
+ * 0.找出有序数组中的num
+ * 1.找出数组中大于等于num的最左边的数
+ * 2.在有序数组arr中小于等于num最右边的数
  */
 public class Code01 {
 
