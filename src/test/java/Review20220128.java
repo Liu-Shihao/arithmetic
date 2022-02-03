@@ -7,13 +7,13 @@ public class Review20220128 {
 
     public static void main(String[] args) {
         int[] arr = {9, 4, 1, 6, 2, 5, 4,1};
-        pringArray(arr);
+        printArray(arr);
 //        selectSort(arr);
 //        bubbleSort1(arr);
 //        bubbleSort2(arr);
-//        insertionSort1(arr);
-        insertionSort2(arr);
-        pringArray(arr);
+        insertionSort1(arr);
+//        insertionSort2(arr);
+        printArray(arr);
 
     }
 
@@ -21,7 +21,7 @@ public class Review20220128 {
      * 打印数组
      * @param arr
      */
-    public static void pringArray(int[] arr){
+    public static void printArray(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]+" ");
         }
@@ -120,10 +120,10 @@ public class Review20220128 {
 
     /**
      * 插入排序第一种写法：
-     * 0 ~ n-1
-     * 1 ~ n-1
-     * 2 ~ n-1
-     * 3 ~ n-1
+     * 0 ~ n-1   待排序元素位置 1
+     * 1 ~ n-1   待排序元素位置 2
+     * 2 ~ n-1   待排序元素位置 3
+     * 3 ~ n-1   待排序元素位置 4
      * @param arr
      */
     public static void insertionSort1(int[] arr){
@@ -132,7 +132,8 @@ public class Review20220128 {
         }
         int N = arr.length;
         int num = 0;
-        for (int i = 0; i < N; i++) {
+        //TODO i可以从1开始，因为0位置的元素不需要排序，
+        for (int i = 1; i < N; i++) {
             int nextValueIndex = i ;
             while ((nextValueIndex -1)>=0 && (arr[nextValueIndex] < arr[nextValueIndex-1])){
                 swap(arr,nextValueIndex,nextValueIndex-1);
