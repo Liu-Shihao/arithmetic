@@ -40,6 +40,7 @@ public class Code01 {
      *  1 -> 2 -> 3 -> null
      *
      *  null <- 1 <- 2 <- 3
+     *                    head
      * @param head
      * @return
      */
@@ -75,6 +76,55 @@ public class Code01 {
         return pre;
     }
 
+    /**
+     * 反转双链表
+     * head
+     * null <- 1 <-> 2 <-> 3 -> null
+     *
+     * null <- 1 <-> 2 <-> 3 -> null
+     *                     head
+     *
+     * @param head
+     * @return
+     */
+    public static DoubleNode reverseDoubleLinkedList(DoubleNode head){
+        DoubleNode pre = null;
+        DoubleNode next = null;
+        while (head != null){
+            /**
+             * 首先head为 1 时： pre 为null
+             * 此时记录head（1）的next（2）指针
+             * 把 head（1）的next指针指向pre（null）
+             * 把 head（1）的last指针指向next（2）
+             * 将 pre 记录为 head（1）
+             * 将 head 记录为 next（2）
+             * ----------------------------------
+             * 当head为2时：pre为1
+             * 记录head（2）的 next（3）指针，
+             * 将head（2）的next指向pre（1）
+             * 将head（2）的last指针指向next（3）
+             * 再将 pre（此时为1） 记录为 head  2
+             * 将 head（此时为2） 记录为 next（3）
+             * ----------------------------------
+             * 当head为3时：pre为2
+             * 记录 head（3）的next指针（null）
+             * 将 head（3）的next指针指向pre （2）
+             * 将 head（3）的last指针指向next （null）
+             * 把 pre（此时为2）记录为 head（3）
+             * 把 head（此时为3）记录为 next（null）
+             * ----------------------------------
+             * 当head为null， 结束循环。
+             *
+             */
+            next = head.next;
+            head.next = pre;
+            head.last = next;
+            pre = head;
+            head = next;
+        }
+        return pre;
+    }
+
     public static void main(String[] args) {
         Node n1 = new Node(1);
         n1.next = new Node(2);
@@ -85,6 +135,19 @@ public class Code01 {
             System.out.print(n1.value+" ");
             n1 = n1.next;
         }
+        System.out.println();
+        System.out.println("============");
+        DoubleNode d1 = new DoubleNode(1);
+        d1.next = new DoubleNode(2);
+
+        d1.next.next = new DoubleNode(3);
+        d1.next.last = d1;
+        d1 = reverseDoubleLinkedList(d1);
+        while (d1 != null){
+            System.out.print(d1.value+" ");
+            d1 = d1.next;
+        }
+
 
     }
 }
