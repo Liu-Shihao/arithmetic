@@ -83,7 +83,6 @@ public class Code01 {
      *
      * null <- 1 <-> 2 <-> 3 -> null
      *                     head
-     *
      * @param head
      * @return
      */
@@ -147,7 +146,5 @@ public class Code01 {
             System.out.print(d1.value+" ");
             d1 = d1.next;
         }
-
-
     }
 }
