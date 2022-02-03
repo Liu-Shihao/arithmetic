@@ -40,7 +40,6 @@ public class Code01 {
      *  1 -> 2 -> 3 -> null
      *
      *  null <- 1 <- 2 <- 3
-     *
      * @param head
      * @return
      */
@@ -48,7 +47,24 @@ public class Code01 {
         Node pre = null;
         Node next = null;
         /**
-         * 反转链表
+         * 反转单链表： 1 -> 2 -> 3 -> null
+         * head为1时：
+         * 1 的 next指针为 2
+         * 反转时，先将next指针保留为next
+         * 然后将 1 的next指针指向 null
+         * 将当前head（1） 记录为 pre（上一个）
+         * 将next （2） 记录为 head
+         * -------------------
+         * head为2时： pre 为 1
+         * 将head（2）的next指针保留为next
+         * 将head（2）的next指针指向pre
+         * 将head（2）记录为pre
+         * 将head（2）记录为next（3）
+         * -------------------
+         * head为3时：pre为2 同上，但是head（3）记录为next（null）
+         * -------------------
+         * head 为 null 结束循环，同时返回pre：此时head为3
+         *
          */
         while (head != null){
             next = head.next;
