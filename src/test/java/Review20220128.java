@@ -53,7 +53,6 @@ public class Review20220128 {
         if (arr == null || arr.length < 2  ){
             return;
         }
-        int num = 0 ;
         int N = arr.length;
         for (int i = 0; i < N; i++) {
             int minValueIndex = i;
@@ -62,12 +61,10 @@ public class Review20220128 {
                 // 2,1,6,8,1,5
                 // 0 1 2 3 4 5
                 minValueIndex = arr[minValueIndex] > arr[j] ? j:minValueIndex;
-                num ++;
             }
             swap(arr,minValueIndex,i);
 
         }
-        System.out.println(num);
 
     }
 
@@ -79,7 +76,6 @@ public class Review20220128 {
         if (arr == null || arr.length < 2){
             return;
         }
-        int num = 0 ;
         int N = arr.length;
         // 0 ~ n-1
         // 0 ~ n-2
@@ -87,14 +83,12 @@ public class Review20220128 {
         //外层循环控制次数
         for (int i = 0; i < N; i++) {
             //内层循环进行两两比较，从索引0位置开始两两比较  即：j和j+1进行比较，j++，此处 限制条件：j < N-1 和j < N-1-i 效果是一样的。
-            for (int j = 0; j < N-1; j++) {
+            for (int j = 0; j < N-1-i; j++) {
                 if (arr[j] > arr[j+1]){
                     swap(arr,j+1,j);
-                    num ++;
                 }
             }
         }
-        System.out.println(num);
     }
 
     /**
@@ -105,17 +99,14 @@ public class Review20220128 {
         if (arr == null || arr.length < 2){
             return;
         }
-        int num = 0 ;
         int N = arr.length;
         for (int end = N-1; end >= 0; end--) {
             for (int second = 1; second <= end ; second++) {
                 if (arr[second-1] > arr[second]){
                     swap(arr,second-1,second);
-                    num ++;
                 }
             }
         }
-        System.out.println(num);
     }
 
     /**
@@ -131,17 +122,14 @@ public class Review20220128 {
             return;
         }
         int N = arr.length;
-        int num = 0;
         //TODO i可以从1开始，因为0位置的元素不需要排序，
         for (int i = 1; i < N; i++) {
             int nextValueIndex = i ;
             while ((nextValueIndex -1)>=0 && (arr[nextValueIndex] < arr[nextValueIndex-1])){
                 swap(arr,nextValueIndex,nextValueIndex-1);
                 nextValueIndex--;
-                num ++;
             }
         }
-        System.out.println(num);
 
     }
 
@@ -154,16 +142,11 @@ public class Review20220128 {
             return;
         }
         int N = arr.length;
-        int num = 0 ;
         for (int end = 1; end < N; end++) {
             for (int pre = end -1 ; pre >= 0 &&(arr[pre] > arr[pre+1]); pre--) {
                 swap(arr,pre,pre+1);
-                num++;
             }
-
         }
-        System.out.println(num);
-
     }
 
 

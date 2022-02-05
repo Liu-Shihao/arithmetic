@@ -136,11 +136,23 @@ public class Code01 {
         }
         System.out.println();
         System.out.println("============");
+
         DoubleNode d1 = new DoubleNode(1);
+        //将 1 的next指针指向 2
         d1.next = new DoubleNode(2);
 
+        //将 2 的next指针指向 3，pre 指针指向 1
         d1.next.next = new DoubleNode(3);
         d1.next.last = d1;
+
+        //将3 的pre指针指向2
+        d1.next.next.last = d1.next;
+
+//        DoubleNode last = d1.next.next;
+//        while (last != null){
+//            System.out.print(last.value+" ");
+//            last = last.last;
+//        }
         d1 = reverseDoubleLinkedList(d1);
         while (d1 != null){
             System.out.print(d1.value+" ");

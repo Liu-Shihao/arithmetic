@@ -16,9 +16,6 @@ import java.util.Stack;
 public class Code02_MyQueue_MyStack {
 
 
-
-
-
     public static class Node<V>{
         public V value;
         public Node<V> next;
