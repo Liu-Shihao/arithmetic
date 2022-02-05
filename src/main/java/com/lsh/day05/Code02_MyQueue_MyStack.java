@@ -7,7 +7,11 @@ import java.util.Stack;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/3 11:56 下午
- * @desc ：使用单链表结构实现队列
+ * @desc ：单链表和双链表结构
+ * 1.单链表反转
+ * 2.双链表反转
+ * 3.单链表实现队列（先进先出）
+ * 4.单链表实现栈（先进后出）
  */
 public class Code02_MyQueue_MyStack {
 
