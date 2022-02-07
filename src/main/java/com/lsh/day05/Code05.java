@@ -56,10 +56,6 @@ public class Code05 {
         }
         //所有的元素都正好成组，所有组逆序处理后返回head。
         return head;
-
-
-
-
     }
 
     /**
@@ -107,6 +103,28 @@ public class Code05 {
         }
         // cur 到达end位置结束循环，并且将start的next指针指向end（即当时end的next）
         start.next = end;
+    }
+
+    /**
+     * 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7
+     * 组内K个节点逆序
+     * 3 -> 2 -> 1 -> 6 -> 5 -> 4 -> 7
+     * @param args
+     */
+    public static void main(String[] args) {
+        ListNode<Integer> head = new ListNode<>(1);
+        head.next = new ListNode<>(2);
+        head.next.next = new ListNode<>(3);
+        head.next.next.next = new ListNode<>(4);
+        head.next.next.next.next = new ListNode<>(5);
+        head.next.next.next.next.next = new ListNode<>(6);
+        head.next.next.next.next.next.next = new ListNode<>(7);
+        ListNode newHead = reverseKGroup(head, 3);
+        while (newHead!= null){
+            System.out.print(newHead.value + " ");
+            newHead = newHead.next;
+        }
+        System.out.println();
     }
 
 
