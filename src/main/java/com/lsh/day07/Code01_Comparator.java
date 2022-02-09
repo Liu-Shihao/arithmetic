@@ -12,7 +12,7 @@ import java.util.List;
  * 2. Arrays.sort(students,new IdComparator());   students为数组
  * 3. studentArrayList.sort(new IdComparator());  studentArrayList为List
  */
-public class Code01 {
+public class Code01_Comparator {
 
     /**
      * 如果需要比较自定义对象
