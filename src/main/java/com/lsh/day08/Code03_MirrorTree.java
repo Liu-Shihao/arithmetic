@@ -3,7 +3,7 @@ package com.lsh.day08;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/9 3:49 下午
- * @desc ：算法题目：判断两颗数是否是镜像数
+ * @desc ：算法题目：判断一颗二叉树是否是镜像树
  * 镜像：左节点结构和右节点结构是对称的
  *      1
  *    2   2
@@ -37,8 +37,6 @@ public class Code03_MirrorTree {
         }
         // 头节点的左节点和头节点的右节点 相等
         return head1.val == head2.val && isMirrorTree(head1.left,head2.right) && isMirrorTree(head1.right,head2.left);
-
-
     }
 
     public static void main(String[] args) {
@@ -46,7 +44,8 @@ public class Code03_MirrorTree {
         root.left = new TreeNode(2);
         root.right = new TreeNode(2);
         System.out.println(isMirrorTree(root,root));
-
+        System.out.println(isMirrorTree(root,null));
+        System.out.println(isMirrorTree(null,null));
     }
 
 }
