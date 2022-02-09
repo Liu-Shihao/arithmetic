@@ -63,4 +63,4 @@ TreeMap 的时间复杂对为O(logN)
 2.位图实现加减乘除
 
 # day07
-1. 比较器
+1. 比较器，实现Comparator接口重写compare方法
