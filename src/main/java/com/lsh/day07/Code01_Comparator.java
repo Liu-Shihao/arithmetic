@@ -27,8 +27,6 @@ public class Code01_Comparator {
             this.id = id;
             this.age = age;
         }
-
-
     }
 
     public static class IdComparator implements Comparator<Student>{
