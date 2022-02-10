@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/9 5:02 下午
- * @desc ：用先序数组和中序数组建出二叉树数
+ * @desc ：用先序数组和中序数组建出二叉树数并返回头节点
  * 先序： 1 2 4 5 3 6 7
  * 中序： 4 2 5 1 6 3 7
  *
@@ -66,7 +66,7 @@ public class Code05_BuildTwoTree {
      * @param in
      * @param L2
      * @param R2
-     * @param map
+     * @param valueIndexMap
      * @return
      */
     public static TreeNode g(int[] pre,int L1,int R1,int[] in,int L2,int R2,HashMap<Integer,Integer> valueIndexMap){
