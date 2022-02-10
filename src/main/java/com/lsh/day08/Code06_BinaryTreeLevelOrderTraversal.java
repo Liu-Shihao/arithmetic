@@ -54,4 +54,16 @@ public class Code06_BinaryTreeLevelOrderTraversal {
         }
         return answer;
     }
+
+    public static void main(String[] args) {
+        Code04_MaxDept.TreeNode root = new Code04_MaxDept.TreeNode(0);
+        root.left = new Code04_MaxDept.TreeNode(1);
+        root.right = new Code04_MaxDept.TreeNode(1);
+
+        root.left.left = new Code04_MaxDept.TreeNode(1);
+        root.left.right = new Code04_MaxDept.TreeNode(1);
+
+        root.left.left.left = new Code04_MaxDept.TreeNode(1);
+        root.left.right.right = new Code04_MaxDept.TreeNode(1);
+    }
 }
