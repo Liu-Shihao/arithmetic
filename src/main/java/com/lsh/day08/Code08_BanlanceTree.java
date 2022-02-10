@@ -6,7 +6,7 @@ package com.lsh.day08;
  * @desc ：判断一棵树是否是平衡树
  * 什么是平衡数？ 每一棵子树左树和右树的高度差不超过1
  */
-public class Code08 {
+public class Code08_BanlanceTree {
 
     public static class TreeNode {
         public int val;
@@ -52,7 +52,7 @@ public class Code08 {
         Info rightInfo = process(x.right);
         int height = Math.max(leftInfo.height, rightInfo.height) + 1;
 
-        boolean isBalanced = leftInfo.isBalanced && rightInfo.isBalanced && Math.abs(leftInfo.height - rightInfo.height) >= 1;
+        boolean isBalanced = leftInfo.isBalanced && rightInfo.isBalanced && Math.abs(leftInfo.height - rightInfo.height) <= 1;
 
         return new Info(isBalanced,height);
 
@@ -65,9 +65,13 @@ public class Code08 {
 
         root.left.left = new TreeNode(1);
         root.left.right = new TreeNode(1);
+//        root.right.left = new TreeNode(1);
+//        root.right.right = new TreeNode(1);
 
         root.left.left.left = new TreeNode(1);
         root.left.right.right = new TreeNode(1);
+//        root.right.left.left = new TreeNode(1);
+//        root.right.right.right = new TreeNode(1);
 
         Info process = process(root);
         System.out.println(process);
