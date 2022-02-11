@@ -132,8 +132,5 @@ public class Code09_BinarySearchTree {
         System.out.println(isSearchTree1(root));
 
         System.out.println(process(root).IsBST);
-
-
-
     }
 }
