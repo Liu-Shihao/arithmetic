@@ -78,6 +78,23 @@ public class Code01_MergeSort {
 
     }
 
+    /**
+     * 非递归方法
+     */
+    public static void mergeSort2(int[] arr){
+
+        if (arr == null || arr.length < 2){
+            return ;
+        }
+        int step = 1;
+        while (step < arr.length){
+
+        }
+
+
+
+    }
+
     public static void main(String[] args) {
         int[] arr = {3,7,1,4,6,8,2,1,0,4,5,3};
         printArr(arr);
