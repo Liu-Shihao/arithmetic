@@ -4,7 +4,9 @@ package com.lsh.day08;
  * @author ：LiuShihao
  * @date ：Created in 2022/2/11 11:00 上午
  * @desc ：能否组成路径和
+ * 测试链接：https://leetcode.com/problems/path-sum
  * 从头节点开始到末尾叶节点位置能否组成要求路径和
+ *
  */
 public class Code10_PathSum {
 
@@ -19,7 +21,7 @@ public class Code10_PathSum {
     }
 
     /**定义全局布尔类型变量*/
-    public static boolean hasPathSum;
+    public static boolean hasPathSum = false;
 
     /**
      * @param x 节点
