@@ -111,7 +111,6 @@ public class Code02_QuickSort {
             return;
         }
         process(arr,0,arr.length-1);
-
     }
     /**
      * 快速排序-递归过程
@@ -196,9 +195,6 @@ public class Code02_QuickSort {
         }
         System.out.println("=====测试结束=====");
         System.out.println(succeed ? "成功!" : "失败!");
-
-
-
     }
 
     /**
