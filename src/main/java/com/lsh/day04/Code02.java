@@ -58,6 +58,7 @@ public class Code02 {
 
         while (L <= R){
             int mid = (L+R)/2;
+            //此处需要判断mid是否为0 ，如果为0 ，mid-1则越界
             if (mid == 0){
                 return  arr[0] < arr[1] ? 0:1;
             }

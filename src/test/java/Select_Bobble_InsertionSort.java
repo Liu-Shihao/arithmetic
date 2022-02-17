@@ -59,6 +59,18 @@ public class Select_Bobble_InsertionSort {
     }
 
     /**
+     * 交换数组两个元素的位置  第二种写法
+     * @param arr
+     * @param i
+     * @param j
+     */
+    public static void swap2(int[] arr,int i ,int j){
+        arr[i] = arr[j] ^ arr[i];
+        arr[j] = arr[j] ^ arr[i];
+        arr[i] = arr[j] ^ arr[i];
+    }
+
+    /**
      * 0 ~ n-1 、1 ~ n-1 、2 ~ n-1 、3 ~ n-1   由外层循环控制  i 从 0 开始    i++
      * 内层循环，从i之后的位置开始比较，找到最小值的位置。
      * @param arr
@@ -143,11 +155,11 @@ public class Select_Bobble_InsertionSort {
     }
 
     public static void main(String[] args) {
-        int timetest = 10000;
+        int timetest = 100000;
         System.out.println("开始测试");
         retry:
         for (int i = 0; i < timetest; i++) {
-            int[] arr = generateRandomArr(20, 10);
+            int[] arr = generateRandomArr(20, 100);
             int[] copy = copy(arr);
 //            selectionSort(copy);
             bubbleSort(copy);
