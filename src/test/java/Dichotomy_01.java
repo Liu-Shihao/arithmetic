@@ -58,7 +58,7 @@ public class Dichotomy_01 {
      * a = a 异或 b;          此时 a 的值为  ：a 异或 b
      * b = a 异或 b 异或 b ;   (b 异或 b)结果为0,    0 ^ a = a;  所以 b = a; 此时 b = a;
      * a = a 异或 b 异或 a ;    a异或a结果为0, 0再异或b 则结果为b；所以 a = b;
-     *
+     * 前提：i和j 不能是同一位置；
      * @param i
      * @param j
      */
@@ -133,13 +133,30 @@ public class Dichotomy_01 {
     public static void main(String[] args) {
 //        int[] arr = {0,1,1,2,5,5,5,5,5,6,7,7,8};
 //        System.out.println(findMoreLeftIndex(arr,1));
-        int testtime = 1000;
-        for (int i = 0; i  < testtime; i++) {
-            int[] arr = generateRandomArray(15, 20);
-            printArr(arr);
-            System.out.println(getLessIndex(arr));
-            System.out.println("---------------------");
-        }
+//        int testtime = 1000;
+//        for (int i = 0; i  < testtime; i++) {
+//            int[] arr = generateRandomArray(15, 20);
+//            printArr(arr);
+//            System.out.println(getLessIndex(arr));
+//            System.out.println("---------------------");
+//        }
+//        int a = 16;
+//        int b = 6;
+//        System.out.println(a);
+//        System.out.println(b);
+//        a = a^b;
+//        b = a^b;
+//        a = a^b;
+//        System.out.println(a);
+//        System.out.println(b);
+
+        int[] arr = {4,1,2,6,4,2};
+        swap(arr,1,1);
+        printArr(arr);
+        //使用异或交换数组同位置的数，会把此位置的数变为0：   4,1,2,6,4,2 --swap(arr,1,1)——>  4 0 2 6 4 2
+        //因为数组中的同一位置的内存区域地址是一样的，N^N结果为0。
+
+
 
     }
 }
