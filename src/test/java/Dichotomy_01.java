@@ -52,6 +52,23 @@ public class Dichotomy_01 {
     }
 
     /**
+     * 异或操作 不使用额外变量 交换值
+     * 异或，相同为0 不同为1 ；就是无进位相加
+     * 两个规律： 0 ^ N = N ；N ^ N = 0
+     * a = a 异或 b;          此时 a 的值为  ：a 异或 b
+     * b = a 异或 b 异或 b ;   (b 异或 b)结果为0,    0 ^ a = a;  所以 b = a; 此时 b = a;
+     * a = a 异或 b 异或 a ;    a异或a结果为0, 0再异或b 则结果为b；所以 a = b;
+     *
+     * @param i
+     * @param j
+     */
+    public static void swap(int[] arr,int i,int j){
+        arr[i] = arr[i] ^ arr[j];
+        arr[j] = arr[i] ^ arr[j];
+        arr[i] = arr[i] ^ arr[j];
+    }
+
+    /**
      * 找到有序数组中大于等于num最左边的数
      * @param arr
      * @param num
@@ -78,6 +95,11 @@ public class Dichotomy_01 {
         return moreLeftIndex;
     }
 
+    /**
+     * 局部最小值问题
+     * @param arr
+     * @return
+     */
     public static int getLessIndex(int[] arr){
         if (arr == null || arr.length == 0 ){
             return -1;
@@ -116,9 +138,7 @@ public class Dichotomy_01 {
             int[] arr = generateRandomArray(15, 20);
             printArr(arr);
             System.out.println(getLessIndex(arr));
-
             System.out.println("---------------------");
-
         }
 
     }
