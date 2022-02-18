@@ -1,7 +1,7 @@
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/17 3:03 下午
- * @desc ：二分法
+ * @desc ：Dichotomy  二分法
  *
  * 找到有序数组中大于等于num最左边的数
  */
@@ -140,15 +140,6 @@ public class Dichotomy_01 {
 //            System.out.println(getLessIndex(arr));
 //            System.out.println("---------------------");
 //        }
-//        int a = 16;
-//        int b = 6;
-//        System.out.println(a);
-//        System.out.println(b);
-//        a = a^b;
-//        b = a^b;
-//        a = a^b;
-//        System.out.println(a);
-//        System.out.println(b);
 
         int[] arr = {4,1,2,6,4,2};
         swap(arr,1,1);
