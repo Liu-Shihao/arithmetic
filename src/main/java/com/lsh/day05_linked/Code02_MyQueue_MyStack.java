@@ -1,4 +1,4 @@
-package com.lsh.day05;
+package com.lsh.day05_linked;
 
 import java.util.LinkedList;
 import java.util.Queue;

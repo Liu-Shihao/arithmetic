@@ -1,4 +1,4 @@
-package com.lsh.day05;
+package com.lsh.day05_linked;
 
 /**
  * @author ：LiuShihao

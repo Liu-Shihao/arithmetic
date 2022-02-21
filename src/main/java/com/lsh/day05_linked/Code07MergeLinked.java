@@ -1,11 +1,11 @@
-package com.lsh.day05;
+package com.lsh.day05_linked;
 
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/7 1:51 下午
  * @desc ：两个有序链表的合并
  */
-public class Code07 {
+public class Code07MergeLinked {
 
     public static class ListNode{
         public int value;

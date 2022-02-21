@@ -1,4 +1,4 @@
-package com.lsh.day05;
+package com.lsh.day05_linked;
 
 /**
  * @author ：LiuShihao
@@ -6,7 +6,7 @@ package com.lsh.day05;
  * @desc ：题目2：两个链表相加
  *
  */
-public class Code06 {
+public class Code06_SumTwoLinked {
     public static class ListNode{
         public int value;
         public ListNode next;

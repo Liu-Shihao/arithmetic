@@ -1,11 +1,11 @@
-package com.lsh.day05;
+package com.lsh.day05_linked;
 
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/5 6:38 下午
  * @desc ：题目：K个节点的组内逆序调整
  */
-public class Code05 {
+public class Code05_ReverseK {
 
     /**
      * 单链表结构
