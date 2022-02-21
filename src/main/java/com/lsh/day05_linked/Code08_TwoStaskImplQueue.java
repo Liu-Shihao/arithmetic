@@ -51,8 +51,6 @@ public class Code08_TwoStaskImplQueue {
             pushToPopStack();
             return popStack.peek();
         }
-
-
     }
 
 
