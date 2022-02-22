@@ -8,53 +8,19 @@ package com.lsh.day02_sort;
  */
 public class Code02_BubbleSort {
 
-    /**
-     * 交换数组中 i和j的位置
-     * @param arr
-     * @param i
-     * @param j
-     */
-    public static void swap(int[] arr,int i , int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
-    /**
-     * 打印数组
-     * @param arr
-     */
-    public static void printArray(int[] arr){
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
-        }
-        System.out.println();
-    }
 
     public static void BubbleSort(int[] arr){
         if (arr == null || arr.length<2){
             return;
         }
-        
-//虽然可以排序，但是不是冒泡算法：因为并不是两两比较交换，可以看出是把第一位和每位元素比较，然后把最大值放在第一位，类似原则排序
-//        for (int i = 0; i < arr.length; i++) {
-//            for (int j = i+1; j < arr.length; j++) {
-//                if (arr[i] > arr[j]){
-//                    //交换位置
-//                    swap(arr,i,j);
-//                }
-//            }
-//        }
-
-
-//冒泡算法 简单写法：
-//        for (int i = 0; i < arr.length; i++) {
-//            for (int j = 0; j < arr.length-1-i; j++) {
-//                if (arr[j] > arr[j+1]){
-//                    swap(arr,j+1,j);
-//                }
-//            }
-//        }
+        //冒泡算法 简单写法：
+        //        for (int i = 0; i < arr.length; i++) {
+        //            for (int j = 0; j < arr.length-1-i; j++) {
+        //                if (arr[j] > arr[j+1]){
+        //                    swap(arr,j+1,j);
+        //                }
+        //            }
+        //        }
 
 
 
@@ -76,7 +42,7 @@ public class Code02_BubbleSort {
             //如果second比second-1 大，则交换位置。
             for (int second = 1; second <= end; second++) {
                 if (arr[second -1] > arr[second]){
-                    swap(arr,second,second-1);
+                    SortUtil.swap(arr,second,second-1);
                 }
             }
         }
@@ -86,9 +52,9 @@ public class Code02_BubbleSort {
 
     public static void main(String[] args) {
         int[] arr = {4, 6, 2, 7, 1, 9, 5, 5, 2, 3};
-        printArray(arr);
+        SortUtil.printArr(arr);
         BubbleSort(arr);
-        printArray(arr);
+        SortUtil.printArr(arr);
     }
 
 

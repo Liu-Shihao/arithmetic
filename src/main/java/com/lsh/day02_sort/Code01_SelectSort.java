@@ -14,9 +14,9 @@ public class Code01_SelectSort {
 
     public static void main(String[] args) {
         int[] arr = {2, 5, 7, 2, 3, 7, 1, 4, 9};
-        printArray(arr);
+        SortUtil.printArr(arr);
         selectSort(arr);
-        printArray(arr);
+        SortUtil.printArr(arr);
     }
 
     public static void selectSort(int[] arr){
@@ -44,15 +44,4 @@ public class Code01_SelectSort {
 
     }
 
-    /**
-     * 打印数组
-     * @param arr
-     */
-    public static void printArray(int[] arr){
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
-        }
-        System.out.println();
-
-    }
 }

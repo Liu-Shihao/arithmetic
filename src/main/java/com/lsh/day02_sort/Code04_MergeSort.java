@@ -7,9 +7,24 @@ package com.lsh.day02_sort;
  * 将数组分成左右两组，将左边部分有序，右边部分有序
  * 用两个指针 分别指向左右最小的元素，拿出最小的，指针向后移动
  *
+ * 1. arr[L..R]范围上有序
+ * 2. arr[L..M]范围上有序
+ * 3. arr[M+1..R]范围上有序
+ * 4. merge 合并(借助两个指针，一个数组)
+ *
  */
 public class Code04_MergeSort {
 
+    public static void main(String[] args) {
+        int testTime = 100;
+        for (int i = 0; i < testTime; i++) {
+            int[] arr = SortUtil.generateRandomArray(10, 20);
+            SortUtil.printArr(arr);
+            mergeSort1(arr);
+            SortUtil.printArr(arr);
+            System.out.println("====================");
+        }
+    }
     /**
      * 递归方法实现归并排序
      * @param arr
@@ -29,7 +44,7 @@ public class Code04_MergeSort {
      * @param R
      */
     public static void process(int[] arr,int L,int R){
-        //
+        //base case
         if (L == R){
             return;
         }
@@ -42,7 +57,7 @@ public class Code04_MergeSort {
     }
 
     /**
-     *
+     * 合并
      * @param arr
      * @param L
      * @param M
@@ -70,19 +85,12 @@ public class Code04_MergeSort {
         }
     }
 
-    public static void printArr(int[] arr){
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
-        }
-        System.out.println();
 
-    }
 
     /**
-     * 非递归方法
+     * TODO 非递归方法
      */
     public static void mergeSort2(int[] arr){
-
         if (arr == null || arr.length < 2){
             return ;
         }
@@ -90,18 +98,11 @@ public class Code04_MergeSort {
         while (step < arr.length){
 
         }
-
-
-
     }
 
-    public static void main(String[] args) {
-        int[] arr = {3,7,1,4,6,8,2,1,0,4,5,3};
-        printArr(arr);
-        mergeSort1(arr);
-        printArr(arr);
 
-    }
+
+
 
 
 

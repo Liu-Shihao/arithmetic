@@ -27,7 +27,7 @@ public class Code05_QuickSort {
 //                lessEquseR ++;
 //                index ++;
                 //合并上面三行
-                swap(arr,++lessEquseR,index++);
+                SortUtil.swap(arr,++lessEquseR,index++);
 
             }else {
                 index ++;
@@ -47,29 +47,17 @@ public class Code05_QuickSort {
         //
         while (index < moreL){
             if (arr[index] < arr[N - 1]){
-                swap(arr,index++,++lessR);
+                SortUtil.swap(arr,index++,++lessR);
             }else if (arr[index] > arr[N - 1]){
-                swap(arr,index,--moreL);
+                SortUtil.swap(arr,index,--moreL);
             }else {
                 index++;
             }
         }
-        swap(arr,moreL,N-1);
+        SortUtil.swap(arr,moreL,N-1);
     }
 
-    public static void swap(int[]arr, int i ,int j){
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
 
-    public static void printArr(int[] arr){
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i]+" ");
-        }
-        System.out.println();
-
-    }
 
     /**
      * 数组arr[L...R]范围上用arr[R]划分，返回等于arr[R]的范围
@@ -88,17 +76,17 @@ public class Code05_QuickSort {
         while (index < moreL){
             if (arr[index] < arr[R]){
                 //小于arr[R] 交换lessR 和 index 的位置，index向下一位(即index++)，lessR自增一位（先自增在使用即++lessR）
-                swap(arr,index++,++lessR);
+                SortUtil.swap(arr,index++,++lessR);
             }else if (arr[index] > arr[R]){
                 //大于arr[R] ，交换moreL和index 的位置，index位置不变，moreL向前一位（先减一再使用即--moreL）
-                swap(arr,index,--moreL);
+                SortUtil.swap(arr,index,--moreL);
             }else {
                 //等于arr[R],不交换，index向下一位
                 index++;
             }
             //当index指针和moreL重合，跳出循环;所以最后index和moreL的值是一样的。
         }
-        swap(arr,index,R);
+        SortUtil.swap(arr,index,R);
         return new int[] {lessR+1,moreL};
     }
 
@@ -183,11 +171,11 @@ public class Code05_QuickSort {
         boolean succeed = true;
         System.out.println("=====测试开始=====");
         for (int i = 0; i < testTime; i++) {
-            int[] arr1 = generateRandomArray(maxSize, maxValue);
-            int[] arr2 = copyArray(arr1);
+            int[] arr1 = SortUtil.generateRandomArray(maxSize, maxValue);
+            int[] arr2 = SortUtil.copyArray(arr1);
             quickSort1(arr1);
             quickSort2(arr2);
-            if (!isEqual(arr1, arr2) ) {
+            if (!SortUtil.isEqual(arr1, arr2) ) {
                 System.out.println("排序错误！");
                 succeed = false;
                 break;
@@ -196,62 +184,4 @@ public class Code05_QuickSort {
         System.out.println("=====测试结束=====");
         System.out.println(succeed ? "成功!" : "失败!");
     }
-
-    /**
-     * 生成随机数组
-     * @param maxSize
-     * @param maxValue
-     * @return
-     */
-    public static int[] generateRandomArray(int maxSize, int maxValue) {
-        int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = (int) ((maxValue + 1) * Math.random()) - (int) (maxValue * Math.random());
-        }
-        return arr;
-    }
-
-    /**
-     * 复制数组
-     * @param arr
-     * @return
-     */
-    public static int[] copyArray(int[] arr) {
-        if (arr == null) {
-            return null;
-        }
-        int[] res = new int[arr.length];
-        for (int i = 0; i < arr.length; i++) {
-            res[i] = arr[i];
-        }
-        return res;
-    }
-
-    /**
-     * 判断数组是否相同
-     * @param arr1
-     * @param arr2
-     * @return
-     */
-    public static boolean isEqual(int[] arr1, int[] arr2) {
-        if ((arr1 == null && arr2 != null) || (arr1 != null && arr2 == null)) {
-            return false;
-        }
-        if (arr1 == null && arr2 == null) {
-            return true;
-        }
-        if (arr1.length != arr2.length) {
-            return false;
-        }
-        for (int i = 0; i < arr1.length; i++) {
-            if (arr1[i] != arr2[i]) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-
-
-
 }
