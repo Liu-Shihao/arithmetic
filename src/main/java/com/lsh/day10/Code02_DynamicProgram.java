@@ -3,7 +3,7 @@ package com.lsh.day10;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/21 9:11 下午
- * @desc ：TODO 纸牌问题  先后手拿牌，最后拿到的牌和最大
+ * @desc ： 纸牌问题  先后手拿牌，最后拿到的牌和最大
  * 暴力破解与动态规划
  */
 public class Code02_DynamicProgram {
