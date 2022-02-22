@@ -9,8 +9,6 @@ public class Code10_GetMax {
     public static void main(String[] args) {
         int[] arr = {3,0,-1,2,13,0,8,9};
         System.out.println(getMax(arr));
-
-
     }
 
     public static int getMax(int[] arr){
