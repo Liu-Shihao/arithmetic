@@ -70,7 +70,6 @@ public class Code04_MergeSort {
         process(arr,mid+1,R);
         //左边右边有序后，进行合并，使用两个指针，那个小排谁，其指针后移
         merge(arr,L,mid,R);
-
     }
 
     /**
@@ -82,23 +81,23 @@ public class Code04_MergeSort {
      */
     public static void merge(int[] arr,int L ,int M,int R){
         int[] help = new int[R-L+1];
-        int i = 0 ;
+        int index = 0 ;
         int p1 = L;
         int p2 = M + 1;
         //p1 和 p2 都没有越界
         while (p1 <= M && p2 <= R){
-            help[i++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++];
+            help[index++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++];
         }
         //要么p1越界，要么p2越界 跳出循环
         while (p1 <= M){
-            help[i++] = arr[p1++];
+            help[index++] = arr[p1++];
         }
         while (p2 <= R){
-            help[i++] = arr[p2++];
+            help[index++] = arr[p2++];
         }
         //将辅助数组中已经有序的元素 覆盖到原来数组中
-        for (int j = 0; j < help.length; j++) {
-            arr[L++] = help[j];
+        for (int i = 0; i < help.length; i++) {
+            arr[L++] = help[i];
         }
     }
 
