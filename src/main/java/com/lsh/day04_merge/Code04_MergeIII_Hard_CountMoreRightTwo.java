@@ -17,7 +17,7 @@ import java.util.Arrays;
  * 2没有
  * 所以这个数组中存在6个这样的数。
  */
-public class Code04_SmallSumIII {
+public class Code04_MergeIII_Hard_CountMoreRightTwo {
 
     public static void main(String[] args) {
 //        int[] arr = {6,8,1,5,3,2};

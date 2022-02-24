@@ -10,7 +10,7 @@ import com.lsh.day02_sort.SortUtil;
  * 例如：2，5，4，7，1，6
  * 21、54、51、41、71、76、 存在6个逆序对
  */
-public class Code04_SmallSumII {
+public class Code04_MergeII_CountReverse {
 
     public static void main(String[] args) {
         System.out.println("测试开始");

@@ -16,7 +16,7 @@ import com.lsh.day02_sort.SortUtil;
  * 所以最小和就是 1+4+1+1=7
  *
  */
-public class Code04_SmallSumI {
+public class Code04_MergeII_SmallSum {
 
     public static void main(String[] args) {
         int testTime = 100;

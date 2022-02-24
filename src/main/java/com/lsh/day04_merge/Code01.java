@@ -17,34 +17,11 @@ public class Code01 {
         for (int i = 0; i < timetest; i++) {
             int[] arr = generateRandomArray(10, 20);
             bubbleSort(arr);
-//            if (find(arr,5)){
-//                //find方法没有找到
-//                if (test(arr,5)){
-//                    printArr(arr);
-//                    System.out.println("找到了");
-//                    System.out.println("==========");
-//                }else{
-//                    printArr(arr);
-//                    System.out.println("错误！");
-//                    System.out.println("==========");
-//                }
-//            }
             printArr(arr);
-
-//            System.out.println(mostLeftNoLessIndex(arr,5));
-//            System.out.println(test2(arr,5));
-
             System.out.println(mostRightNoLessThenIndex(arr,5));
             System.out.println(test3(arr,5));
-
             System.out.println("======================");
-
-
-
-
         }
-
-
         System.out.println("==完成==");
 
     }
@@ -149,7 +126,6 @@ public class Code01 {
             if (arr[i] >= num){
                 return i;
             }
-
         }
         return -1;
     }
