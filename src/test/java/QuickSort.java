@@ -23,7 +23,7 @@ public class QuickSort {
             int[] arr = SortUtil.generateRandomArray(10, 100);
             int[] copyArray = SortUtil.copyArray(arr);
             Arrays.sort(arr);
-            quickSort(copyArray);
+            quickSort2(copyArray);
             if (!SortUtil.isEqual(arr,copyArray)){
                 System.out.println("出错了！");
                 SortUtil.printArr(arr);
@@ -46,6 +46,7 @@ public class QuickSort {
             //如果 L>R 无效范围，如果L=R只有一个数，都直接返回, 会存在L>R的无效情况
             return;
         }
+        // L < R
         //3.0版本， 随机交换一个数字到R位置
         SortUtil.swap(arr,R,L+(int)(Math.random() * (R - L + 1)));
         int[] equals = netherlandsFlag(arr, L, R);
@@ -105,16 +106,14 @@ public class QuickSort {
         int N = arr.length;
         SortUtil.swap(arr,N-1,(int)(Math.random() * N));
         //进行划分
-        int[] equal = netherlandsFlag(arr, 0, N - 1);
-        int el = equal[0];
-        int er = equal[1];
+//        int[] equal = netherlandsFlag(arr, 0, N - 1);
+//        int el = equal[0];
+//        int er = equal[1];
         Stack<Op> stack = new Stack<>();
-        stack.push(new Op(0,el - 1));
-        stack.push(new Op(er + 1,N-1));
+//        stack.push(new Op(0,el - 1));
+//        stack.push(new Op(er + 1,N-1));
+        stack.push(new Op(0,N-1));
 
-//        LinkedList<Op> queue = new LinkedList<>();
-//        queue.offer(new Op(0,el - 1));
-//        queue.offer(new Op(0,el - 1));
 
         while (!stack.isEmpty()){
             //取出一个范围
@@ -122,9 +121,9 @@ public class QuickSort {
             if (op.l < op.r){
                 //随机交换一个元素到最后位置
                 SortUtil.swap(arr,op.r,op.l+(int)(Math.random()*(op.r - op.l +1)));
-                 equal = netherlandsFlag(arr, op.l, op.r);
-                 el = equal[0];
-                 er = equal[1];
+                 int[] equal = netherlandsFlag(arr, op.l, op.r);
+                 int el = equal[0];
+                 int er = equal[1];
                  //划分好的数组，重新将大于区 、小于区 加入栈中
                  stack.push(new Op(op.l,el-1));
                  stack.push(new Op(er+1,op.r));

@@ -1,5 +1,6 @@
 package com.lsh.day02_sort;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -11,6 +12,23 @@ import java.util.Stack;
  * 3.对数器测试
  */
 public class Code05_QuickSort {
+    public static void main(String[] args) {
+
+        int testTime = 50000;
+        System.out.println("=====测试开始=====");
+        for (int i = 0; i < testTime; i++) {
+            int[] arr1 = SortUtil.generateRandomArray(100, 100);
+            int[] arr2 = SortUtil.copyArray(arr1);
+            quickSort1(arr1);
+            Arrays.sort(arr2);
+//            quickSort2(arr2);
+            if (!SortUtil.isEqual(arr1, arr2) ) {
+                System.out.println("排序错误！");
+                break;
+            }
+        }
+        System.out.println("=====测试结束=====");
+    }
 
     /**
      *  小于num的放左边，大于num的放右边
@@ -111,6 +129,8 @@ public class Code05_QuickSort {
             //如果 L>R 无效范围，如果L=R只有一个数，都直接返回
             return;
         }
+        //随机交换元素到最后位置
+        SortUtil.swap(arr,R,L+(int)(Math.random()*(R - L +1)));
         //L<R
         //将arr[L...R]范围上划分
         int [] equal = partition(arr,L,R);
@@ -159,29 +179,5 @@ public class Code05_QuickSort {
         }
     }
 
-    /**
-     * 通过对数器测试
-     * @param args
-     */
-    public static void main(String[] args) {
 
-        int testTime = 500000;
-        int maxSize = 100;
-        int maxValue = 100;
-        boolean succeed = true;
-        System.out.println("=====测试开始=====");
-        for (int i = 0; i < testTime; i++) {
-            int[] arr1 = SortUtil.generateRandomArray(maxSize, maxValue);
-            int[] arr2 = SortUtil.copyArray(arr1);
-            quickSort1(arr1);
-            quickSort2(arr2);
-            if (!SortUtil.isEqual(arr1, arr2) ) {
-                System.out.println("排序错误！");
-                succeed = false;
-                break;
-            }
-        }
-        System.out.println("=====测试结束=====");
-        System.out.println(succeed ? "成功!" : "失败!");
-    }
 }
