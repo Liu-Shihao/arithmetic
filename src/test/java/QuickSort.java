@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Stack;
 
 /**
  * @author ：LiuShihao
@@ -17,14 +18,18 @@ public class QuickSort {
 
     public static void main(String[] args) {
         System.out.println("测试开始");
-        int[] arr = {3,2,6,8,6,1,9,5,6};
-        int[] copyArray = SortUtil.copyArray(arr);
-        quickSort(arr);
-        Arrays.sort(copyArray);
-        if (!SortUtil.isEqual(arr,copyArray)){
-            System.out.println("出错了！");
-            SortUtil.printArr(arr);
-            SortUtil.printArr(copyArray);
+        int testTime = 1000;
+        for (int i = 0; i < testTime; i++) {
+            int[] arr = SortUtil.generateRandomArray(10, 100);
+            int[] copyArray = SortUtil.copyArray(arr);
+            Arrays.sort(arr);
+            quickSort(copyArray);
+            if (!SortUtil.isEqual(arr,copyArray)){
+                System.out.println("出错了！");
+                SortUtil.printArr(arr);
+                SortUtil.printArr(copyArray);
+                break;
+            }
         }
         System.out.println("测试结束");
     }
@@ -55,25 +60,75 @@ public class QuickSort {
         int index = L;
         //当index指针还没有到达 大于区左边界
         while (index < more){
-            if (arr[index] == arr[R]){
-                //等于区域：index指针跳下一个
-                index++;
-            }
-            if (arr[index] < arr[R]){
-                //小于区：交换index和less+1（小于区下一位）的位置；  index跳下一位
-                SortUtil.swap(arr,index++,++less);
-            }
-            if (arr[index] > arr[R]){
-                //大于区：交换index和more-1（小于区下一位）的位置；index位置不变(因为交换过来的元素还为比较，需要重新比较)
+            //错误写法：
+//            if (arr[index] == arr[R]){
+//                //等于区域：index指针跳下一个
+//                index++;
+//            }
+//            if (arr[index] < arr[R]){
+//                //小于区：交换index和less+1（小于区下一位）的位置；  index跳下一位
+//                SortUtil.swap(arr,index++,++less);
+//            }
+//            if (arr[index] > arr[R]){
+//                //大于区：交换index和more-1（小于区下一位）的位置；index位置不变(因为交换过来的元素还为比较，需要重新比较)
+//                SortUtil.swap(arr,index,--more);
+//            }
+            if (arr[index] > arr[R]) {
                 SortUtil.swap(arr,index,--more);
+            }else if (arr[index] < arr[R]){
+                SortUtil.swap(arr,index++,++less);
+            }else {
+                //相等
+                index++;
             }
         }
         //最后跳出循环，还需要将最后一位元素arr[R] 和 大于区的第一位元素 进行交换
         SortUtil.swap(arr,R,more);
         //最后返回中间相等的元素位置
         return new int[] {less+1,more};
-
     }
 
+    //定义辅助类
+    public static class Op{
+        public int l;
+        public int r;
+        public Op(int l,int r){
+            this.l = l;
+            this.r = r;
+        }
+    }
+    //快速排序 非递归实现
+    public static void quickSort2(int[] arr){
+        if (arr == null || arr.length < 2){
+            return;
+        }
+        int N = arr.length;
+        SortUtil.swap(arr,N-1,(int)(Math.random() * N));
+        //进行划分
+        int[] equal = netherlandsFlag(arr, 0, N - 1);
+        int el = equal[0];
+        int er = equal[1];
+        Stack<Op> stack = new Stack<>();
+        stack.push(new Op(0,el - 1));
+        stack.push(new Op(er + 1,N-1));
 
+//        LinkedList<Op> queue = new LinkedList<>();
+//        queue.offer(new Op(0,el - 1));
+//        queue.offer(new Op(0,el - 1));
+
+        while (!stack.isEmpty()){
+            //取出一个范围
+            Op op = stack.pop();
+            if (op.l < op.r){
+                //随机交换一个元素到最后位置
+                SortUtil.swap(arr,op.r,op.l+(int)(Math.random()*(op.r - op.l +1)));
+                 equal = netherlandsFlag(arr, op.l, op.r);
+                 el = equal[0];
+                 er = equal[1];
+                 //划分好的数组，重新将大于区 、小于区 加入栈中
+                 stack.push(new Op(op.l,el-1));
+                 stack.push(new Op(er+1,op.r));
+            }
+        }
+    }
 }
