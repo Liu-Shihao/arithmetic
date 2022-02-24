@@ -49,14 +49,6 @@ public class Code04_SmallSumII {
                 +merge(arr,L,mid,R);
     }
 
-    /**
-     *
-     * @param arr
-     * @param L
-     * @param M
-     * @param R
-     * @return
-     */
     public static int merge(int[] arr,int L,int M,int R){
         //借助一个辅助数组，R-L+1 表示元素的个数
         int[] help = new int[R-L+1];
