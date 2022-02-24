@@ -5,7 +5,7 @@ package com.lsh.day05_linked;
  * @date ：Created in 2022/2/7 1:51 下午
  * @desc ：两个有序链表的合并
  */
-public class Code07MergeLinked {
+public class Code07_MergeLinked {
 
     public static class ListNode{
         public int value;
