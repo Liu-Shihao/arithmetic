@@ -1,4 +1,4 @@
-package com.lsh.day04_dichotomy;
+package com.lsh.day04_merge;
 
 import java.util.HashMap;
 import java.util.TreeMap;

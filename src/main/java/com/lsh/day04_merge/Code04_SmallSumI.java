@@ -1,4 +1,4 @@
-package com.lsh.day04_dichotomy;
+package com.lsh.day04_merge;
 
 import com.lsh.day02_sort.SortUtil;
 

@@ -1,4 +1,4 @@
-package com.lsh.day04_dichotomy;
+package com.lsh.day04_merge;
 
 /**
  * @author ：LiuShihao
