@@ -20,7 +20,9 @@ public class Code01_Heap {
     }
 
     /**
+     * 上浮节点
      * 添加节点，元素值大的向上浮
+     * 不断和父节点比较，只到到达头节点或者比父节点小为止。
      * @param arr 表示堆结构
      * @param index
      */
@@ -30,7 +32,33 @@ public class Code01_Heap {
             SortUtil.swap(arr,index,(index-1)/2);
             index = (index-1)/2;
         }
+    }
 
+    /**
+     * 下沉节点
+     * 不断和自己的左右孩子比较，知道没有孩子或者没有左右孩子比自己大。
+     * @param arr
+     * @param index
+     * @param heapSize
+     */
+    public static void heapify(int[] arr,int index,int heapSize){
+        //求出左孩子 index * 2 + 1   ； 右孩子 ： index * 2 + 2
+        int left = index * 2 +1;
+        //如果左节点 在 堆的范围内
+        while (left < heapSize){
+            //larger 表示 左右孩子中最大的一个
+            //如果右孩子存在，并且比左孩子大，则最大的是右孩子；否则是最大的是左孩子
+            int larger = left +1 < heapSize && arr[left] < arr[left+1] ? left+1 : left;
+            //比较左右孩子和父节点谁更大
+            larger = arr[index] > arr[larger] ? index:larger;
+            // 如果最大的节点就是父节点自己，找到合适的位置，则结束循环。
+            if (larger == index){
+                break;
+            }
+            SortUtil.swap(arr,index,larger);
+            index = larger;
+            left = index * 2 + 1;
+        }
 
     }
 
