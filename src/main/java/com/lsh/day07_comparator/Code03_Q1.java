@@ -1,4 +1,4 @@
-package com.lsh.day07;
+package com.lsh.day07_comparator;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
