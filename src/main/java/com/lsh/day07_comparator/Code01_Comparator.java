@@ -1,8 +1,6 @@
 package com.lsh.day07_comparator;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author ：LiuShihao
@@ -11,6 +9,12 @@ import java.util.List;
  * 1. 使用Arrays.sort(arr)方法可以从小到大对基本数据类型进行排序
  * 2. Arrays.sort(students,new IdComparator());   students为数组
  * 3. studentArrayList.sort(new IdComparator());  studentArrayList为List
+ *	// 任何比较器：
+ * 	// compare方法里，遵循一个统一的规范：
+ * 	// 返回负数的时候，认为第一个参数应该排在前面
+ * 	// 返回正数的时候，认为第二个参数应该排在前面
+ * 	// 返回0的时候，认为无所谓谁放前面
+ *
  */
 public class Code01_Comparator {
 
@@ -74,9 +78,20 @@ public class Code01_Comparator {
         studentArrayList.sort(new IdComparator());
         for (Student  s :studentArrayList){
             System.out.println(s.name+","+s.id+","+s.age);
-
         }
 
+        System.out.println("==================");
+
+        //使用lambda表达式写法：注意如果根据排序规则对象重复了，则对象不会覆盖。
+//        TreeMap<Student, Object> treeMap = new TreeMap<>((o1, o2) -> o1.id != o2.id ? o1.id-o2.id : o1.age-o2.age);
+        TreeMap<Student, String> treeMap = new TreeMap<>(new IdComparator());
+        treeMap.put(s1,"我是学生1");
+        treeMap.put(s2,"我是学生2");
+        treeMap.put(s3,"我是学生3");
+        treeMap.put(s4,"我是学生4");
+        for (Student s :treeMap.keySet()){
+            System.out.println(s.name+","+s.id+","+s.age);
+        }
     }
 
     public static void printArr(int[]arr){

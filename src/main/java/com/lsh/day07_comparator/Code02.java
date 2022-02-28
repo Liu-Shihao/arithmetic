@@ -8,12 +8,13 @@ import java.util.TreeSet;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/9 11:59 上午
- * @desc ：优先队列 PriorityQueue
+ * @desc ：
+ * 优先队列 PriorityQueue
  * 1. PriorityQueue 小根堆 小的优先:PriorityQueue<Integer> head = new PriorityQueue<>();
  * 2. 通过比较器改造小跟堆，成为大跟堆：大的优先.PriorityQueue<Integer> head = new PriorityQueue<>(new MyComparator());
  * 3. 字符串的比较时按字典序
  */
-public class Code02_PriorityQueue {
+public class Code02 {
 
     public static class Student  {
         public String name;

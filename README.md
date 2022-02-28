@@ -86,6 +86,8 @@ TreeMap 的时间复杂对为O(logN)
 10.收集二叉树路径和
 
 # day09
+堆 Heap （优先队列 PriorityQueue）
+
 
 
 # 算法题
