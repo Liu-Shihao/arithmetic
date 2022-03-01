@@ -2,6 +2,8 @@ package com.lsh.day09_heap;
 
 import com.lsh.day02_sort.SortUtil;
 
+import java.util.PriorityQueue;
+
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/28 4:21 下午
@@ -13,10 +15,70 @@ import com.lsh.day02_sort.SortUtil;
  *    1      2
  *  3   4  5   6
  *  第i位置的子左节点：i*2+1  ；第i位置的子右节点：i*2+2  ；第i位置的父节点：(i-1)/2
+ *  heapInsert 和 heapify
+ *  堆排序
+ *
+ *  叶节点：向下没有节点了。如果有N个元素的完全二叉树，则它的叶节点有N/2个
+ *
+ *  算法题：已知一个无序数组，如果有序则每个元素移动的距离不超过K（K小于数组长度），选择一个合适的排序策略进行排序
+ *  假设 k = 5
+ *
  *
  */
-public class Code01_Heap {
+public class Code02_Heap {
+
+    //已知一个无序数组，如果有序则每个元素移动的距离不超过K（K小于数组长度），选择一个合适的排序策略进行排序
     public static void main(String[] args) {
+        int K = 5;
+        int[] arr = {5,3,0,7,2,1,10,9,4,6,8};
+//        int K = 2;
+//        int[] arr = {3,3,1,2,7,8,5,6,10,9};
+        SortUtil.printArr(arr);
+        PriorityQueue<Integer> heap = new PriorityQueue<>();
+        int N = arr.length;
+        for (int i = 0; i <= K; i++) {
+            heap.add(arr[i]);
+        }
+        //弹出一个 新增一个
+        int i = 0;
+        for (; i < N && K < N-1; i++) {
+            arr[i] = heap.poll();
+            heap.add(arr[++K]);
+        }
+        while (!heap.isEmpty()){
+            arr[i++] = heap.poll();
+        }
+        SortUtil.printArr(arr);
+    }
+
+    /**
+     * 堆排序
+     * @param arr
+     */
+    public static void heapSort(int[] arr){
+        if (arr == null || arr.length < 2){
+            return;
+        }
+        //从上往下建立大跟堆 O(N*logN)
+//        for (int i = 0; i < arr.length; i++) {//O(N)
+//            //遍历元素，元素上浮，遍历完成后 数组形成大跟堆
+//            heapInsert(arr,i);//O(logN)
+//        }
+        //从下往上建立大跟堆 O(N)
+        for (int i = arr.length -1 ; i >= 0; i--) {
+            heapify(arr,i,arr.length);
+        }
+        int heapSize = arr.length;
+        //此时数组为大跟堆，将第一位元素（最大值）和最后一位元素交换位置，然后将末尾元素从堆里断开
+        SortUtil.swap(arr,0,--heapSize);
+        //O(N*logN)
+        while (heapSize > 0){
+            //下沉第一位元素
+            heapify(arr,0,heapSize);//O(logN)
+            //重新形成大跟堆，再将第一位元素（目前最大值）交换到最后一位，并断开
+            SortUtil.swap(arr,0,--heapSize);//O(1)
+        }
+
     }
 
     /**
@@ -59,7 +121,6 @@ public class Code01_Heap {
             index = larger;
             left = index * 2 + 1;
         }
-
     }
 
 }
