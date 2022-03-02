@@ -22,7 +22,7 @@ package com.lsh.leetcode;
  *            1         0         1
  *
  */
-public class Code338_Easy_CountingBits {
+public class Code338_CountingBits {
 
     public int[] countBits(int n) {
         int[] arr = new int[n + 1];
