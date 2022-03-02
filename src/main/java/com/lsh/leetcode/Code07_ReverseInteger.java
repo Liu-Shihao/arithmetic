@@ -16,7 +16,7 @@ package com.lsh.leetcode;
  * Input: x = 120
  * Output: 21
  */
-public class Code7_ReverseInteger {
+public class Code07_ReverseInteger {
 
     public int reverse(int x) {
         int result = 0;
