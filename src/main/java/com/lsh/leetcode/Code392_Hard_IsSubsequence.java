@@ -5,6 +5,8 @@ package com.lsh.leetcode;
  * @date ：Created in 2022/3/2 9:18 上午
  * @desc ：392. Is Subsequence
  * https://leetcode.com/problems/is-subsequence/
+ * 给定两个字符串s和t，如果s是t的子序列则返回true，否则返回false。
+ * 一个字符串的子序列是一个新字符串，它是通过删除一些字符(可以不删除)而形成的，而不影响其余字符的相对位置。(例如，“ace”是“abcde”的子序列，而“aec”不是)。
  */
 public class Code392_Hard_IsSubsequence {
 
