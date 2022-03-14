@@ -23,6 +23,7 @@ public class Code14_LongestCommonPrefix {
     }
 
     /**
+     * TODO
      * 别人方法
      * @param strs
      * @return
