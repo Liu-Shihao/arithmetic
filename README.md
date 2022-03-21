@@ -1,5 +1,6 @@
 Author： LiuShihao <br>
 Update Time：2022年01月27日15:51:23
+VIS标记：表示非常重要标记（VeryImportantSign）   
 # day00
 ## 异或问题
 
@@ -87,7 +88,7 @@ TreeMap 的时间复杂对为O(logN)
 
 # day09
 堆 Heap （优先队列 PriorityQueue）
-
+1.；最大线段重合问题
 
 
 # 算法题

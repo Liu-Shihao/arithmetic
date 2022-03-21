@@ -1,56 +1,11 @@
-package com.lsh.day09_heap;
-
-import com.lsh.day02_sort.SortUtil;
-
-import java.util.PriorityQueue;
+package com.lsh.day02_sort;
 
 /**
  * @author ：LiuShihao
- * @date ：Created in 2022/2/28 4:21 下午
- * @desc ：Heap 堆 （优先级队列）
- * 小根堆 ：每个子树的最小值就是子头节点的值
- * 大根堆 ：每个子树的最大值就是子头节点的值
- * 完全二叉树就是堆结构。堆结构就是大跟堆或者小根堆
- *       0
- *    1      2
- *  3   4  5   6
- *  第i位置的子左节点：i*2+1  ；第i位置的子右节点：i*2+2  ；第i位置的父节点：(i-1)/2
- *  heapInsert 和 heapify
- *  堆排序
- *
- *  叶节点：向下没有节点了。如果有N个元素的完全二叉树，则它的叶节点有N/2个
- *
- *  算法题：已知一个无序数组，如果有序则每个元素移动的距离不超过K（K小于数组长度），选择一个合适的排序策略进行排序
- *  假设 k = 5
- *
- *
+ * @date ：Created in 2022/3/21 4:39 下午
+ * @desc ：堆排序
  */
-public class Code02_Heap {
-
-    //已知一个无序数组，如果有序则每个元素移动的距离不超过K（K小于数组长度），选择一个合适的排序策略进行排序
-    public static void main(String[] args) {
-        int K = 5;
-        int[] arr = {5,3,0,7,2,1,10,9,4,6,8};
-//        int K = 2;
-//        int[] arr = {3,3,1,2,7,8,5,6,10,9};
-        SortUtil.printArr(arr);
-        PriorityQueue<Integer> heap = new PriorityQueue<>();
-        int N = arr.length;
-        for (int i = 0; i <= K; i++) {
-            heap.add(arr[i]);
-        }
-        //弹出一个 新增一个
-        int i = 0;
-        for (; i < N && K < N-1; i++) {
-            arr[i] = heap.poll();
-            heap.add(arr[++K]);
-        }
-        while (!heap.isEmpty()){
-            arr[i++] = heap.poll();
-        }
-        SortUtil.printArr(arr);
-    }
-
+public class Code06_HeapSort {
     /**
      * 堆排序
      * @param arr
@@ -80,6 +35,7 @@ public class Code02_Heap {
         }
 
     }
+
 
     /**
      * 上浮节点
