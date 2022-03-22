@@ -9,6 +9,7 @@ import java.util.PriorityQueue;
  * @author ：LiuShihao
  * @date ：Created in 2022/2/28 4:21 下午
  * @desc ：Heap 堆 （优先级队列）
+ * 重点： heapify方法（下沉节点）和heapInsert方法（上浮节点）
  * 小根堆 ：每个子树的最小值就是子头节点的值
  * 大根堆 ：每个子树的最大值就是子头节点的值
  * 完全二叉树就是堆结构。堆结构就是大跟堆或者小根堆

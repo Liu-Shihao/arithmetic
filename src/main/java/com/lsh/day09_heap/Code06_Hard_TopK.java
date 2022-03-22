@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/3/21 11:17 下午
- * @desc ：TODO 抽奖问题
+ * @desc ：加强堆 等候区与得奖区算法题
  * 给定一个整型数组，int[] arr；和一个布尔类型数组，boolean[] op
  * 两个数组一定等长，假设长度为N，arr[i]表示客户编号，op[i]表示客户操作
  * arr = [ 3   ,   3   ,   1   ,  2,      1,      2,      5…

@@ -7,8 +7,7 @@ import java.util.PriorityQueue;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/3/1 11:18 上午
- * @desc ：加强堆
- * 最大线段重合问题
+ * @desc ：最大线段重合问题
  * 一个数轴上，有很多的线段：[1,4] 、 [3,5]、 [7,9]、[6,10]...
  *MaximumLineSegmentCoincidence
  * 给定很多的线段，每个线段都有两个数[start,end],表示线段开始和结束的时间，左右都是闭区间
