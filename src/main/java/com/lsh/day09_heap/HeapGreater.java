@@ -14,13 +14,8 @@ import java.util.List;
  *
  *
  */
-public class Code04_HeapGreater {
+public class HeapGreater<T> {
 
-    /**
-     * 加强堆
-     * @param <T>
-     */
-    public class HeapGreater<T>{
         private ArrayList<T> heap;
         private HashMap<T,Integer> indexMap;//反向索引表
         private int heapSize;
@@ -119,8 +114,6 @@ public class Code04_HeapGreater {
             indexMap.put(o1, j);
         }
 
-
-    }
 
 
 }
