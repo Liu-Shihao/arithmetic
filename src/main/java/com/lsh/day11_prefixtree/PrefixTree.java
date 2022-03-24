@@ -11,6 +11,9 @@ import java.util.HashMap;
  * 3）所有样本都这样添加，如果没有路就新建，如有路就复用
  * 4）沿途节点的pass值增加1，每个字符串结束时来到的节点end值增加1
  *
+ * Node1 使用数组实现 （数组长度为26表示26个字母）
+ * Node2 使用HashMap实现
+ *
  */
 public class PrefixTree {
 

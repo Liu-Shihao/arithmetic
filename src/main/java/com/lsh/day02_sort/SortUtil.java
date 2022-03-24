@@ -20,6 +20,13 @@ public class SortUtil {
         }
         return arr;
     }
+    public static int[] generateRandomArray(int maxSize, int maxValue,Boolean isPositiveNumber) {
+        int[] arr = new int[(int) ((maxSize + 1) * Math.random())];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = (int) ((maxValue + 1) * Math.random());
+        }
+        return arr;
+    }
 
     /**
      * 打印数组
