@@ -1,5 +1,7 @@
 package com.lsh.day02_sort;
 
+import java.util.Arrays;
+
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/3/24 4:49 下午
@@ -11,11 +13,30 @@ package com.lsh.day02_sort;
  */
 public class Code08_Hard_RadixSort {
 
+    public static void main(String[] args) {
+        int testtime = 10000;
+        int maxLength = 10;
+        int maxValue = 200;
+        System.out.println("测试开始");
+        for (int i = 0; i < testtime; i++) {
+            int[] array = SortUtil.generateRandomArray(maxLength, maxValue,true);
+            int[] copyArray = SortUtil.copyArray(array);
+            Arrays.sort(array);
+            radixSort(copyArray);
+            if (!SortUtil.isEqual(array, copyArray)){
+                System.out.println("基数排序失败");
+                SortUtil.printArr(array);
+                SortUtil.printArr(copyArray);
+                break;
+            }
+        }
+        System.out.println("测试结束");
+    }
+
+    //基数排序
     public static void radixSort(int[] arr){
         if (arr == null || arr.length < 2){return;}
         radixSort(arr, 0, arr.length - 1, maxbits(arr));
-
-
     }
 
     //arr[L..R]排序  ,  最大值的十进制位数digit
@@ -25,7 +46,7 @@ public class Code08_Hard_RadixSort {
         int i = 0, j = 0;
         //准备辅助数组  有多少个数准备多少个辅助空间
         int[] help = new int[R-L+1];
-        for (int d = 1; d <= digit  ; d++) {//有多少为就进出几次
+        for (int d = 1; d <= digit ; d++) {//有多少为就进出几次
             //10个空间
             //count[0] 表示d当前为是0的有多少个
             //count[1] 表示d当前为是0~1的有多少个
@@ -34,7 +55,7 @@ public class Code08_Hard_RadixSort {
             int[] count = new int[radix];//0-9
 
             //统计count数组每个位置的数出现次数
-            for ( i = L; i < R; i++) {
+            for ( i = L; i <= R; i++) {
                 //获取该位置上的数值
                  j = getDigit(arr[i],d);
                  count[j]++;
@@ -43,8 +64,9 @@ public class Code08_Hard_RadixSort {
             for ( i = 1; i < radix; i++) {
                 count[i] = count[i] + count[i-1];
             }
-            //将arr原数组从右往左遍历
-            for (i = R; i >= L ; i++) {
+            //将arr原数组从右往左遍历，开始将数倒到help数组中
+
+            for (i = R; i >= L ; i--) {
                 j = getDigit(arr[i],d);//获得该位置上的数字
                 //将该数放到辅助数组 最右的位置（count[j] - 1），并且将计数数组count 该位数字的值减一
                 help[count[j] - 1] = arr[i];
