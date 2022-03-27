@@ -6,8 +6,10 @@ import java.util.Stack;
  * @author ：LiuShihao
  * @date ：Created in 2022/3/25 1:09 上午
  * @desc ：单链表题目：判断链表是否为回文结构
+ * 1.借助栈数据结构
+ * 2.使用快慢指针方法
  */
-public class Code11_IsPalindrome {
+public class Code11_VIS_IsPalindrome {
 
     static class Node<T>{
 
@@ -20,10 +22,10 @@ public class Code11_IsPalindrome {
     }
 
     public static void main(String[] args) {
-        Node<Integer> head = new Node<Integer>(1);
-        head.next = new Node<Integer>(2);
-        head.next.next = new Node<Integer>(2);
-        head.next.next.next = new Node<Integer>(1);
+        Node<Integer> head = new Node<>(1);
+        head.next = new Node<>(2);
+        head.next.next = new Node<>(2);
+        head.next.next.next = new Node<>(1);
         System.out.println(isPalindrome1(head));
     }
 
