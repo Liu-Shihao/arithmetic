@@ -1,4 +1,4 @@
-package com.lsh.day05_linked;
+package com.lsh.day05_linkedlist;
 
 import java.util.Stack;
 

@@ -1,4 +1,4 @@
-package com.lsh.day05_linked;
+package com.lsh.day05_linkedlist;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -61,7 +61,7 @@ public class Code02_MyQueue_MyStack {
         public void offer(V value){
             Node<V> cur = new Node<>(value);
             if (tail == null){
-                //如果尾部没有元浸塑，即队列为空，则，头尾都指向cur当前元素
+                //如果尾部没有元素，即队列为空，则头尾都指向cur当前元素
                 head = cur;
                 tail = cur;
             }else {

@@ -1,4 +1,4 @@
-package com.lsh.day05_linked;
+package com.lsh.day05_linkedlist;
 
 /**
  * @author ：LiuShihao
@@ -6,7 +6,7 @@ package com.lsh.day05_linked;
  * @desc ：链表划分问题
  * 给定一个Value，将一个链表根据Value值划分为小于区域、等于区域、大于区域
  */
-public class Code14_SmallerEqualBigger {
+public class Code14_PartitionList {
 
     public static void main(String[] args) {
         Node head1 = new Node(7);
