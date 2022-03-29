@@ -1,4 +1,4 @@
-package com.lsh.day08_tree;
+package com.lsh.day08_binarytree;
 
 /**
  * @author ：LiuShihao

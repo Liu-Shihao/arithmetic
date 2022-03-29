@@ -1,4 +1,4 @@
-package com.lsh.day08_tree;
+package com.lsh.day08_binarytree;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -23,17 +23,21 @@ public class Code01_PrintTreeIII {
     }
 
     public static void main(String[] args) {
-        Node head = new Node(1);
-        head.left = new Node(2);
-        head.right = new Node(3);
+        Node node = new Node(1);
+        node.left = new Node(2);
 
-        head.left.left = new Node(4);
-        head.left.right = new Node(5);
+        node.left.left = new Node(4);
+        node.left.right = new Node(6);
+        node.left.left.left = new Node(5);
+        node.right = new Node(3);
+        node.right.left = new Node(7);
+        node.right.left.right = new Node(9);
 
-        head.right.left = new Node(6);
-        head.right.right = new Node(7);
+        node.right.right = new Node(8);
+        node.right.right.left = new Node(10);
+        node.right.right.right = new Node(11);
 
-        printTree(head);
+        printTree(node);
 
 
     }
