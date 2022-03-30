@@ -4,8 +4,31 @@ package com.lsh.day08_binarytree;
  * @author ：LiuShihao
  * @date ：Created in 2022/3/30 8:25 下午
  * @desc ：返回二叉树的最大搜索子树的节点数
+ *
+ *             5
+ *        3        8
+ *     1     6   7   9
+ *       2
+ *  此二叉树整体不是搜索树，但是以3位头和以8位头的子树是搜索树，返回最大的搜索树的节点数，所有应该返回4
  */
 public class Code20_MaxSubBSTSize {
+
+    public static void main(String[] args) {
+        Node head = new Node(5);
+        head.left = new Node(3);
+        head.right = new Node(8);
+
+        head.left.left = new Node(1);
+        head.left.right = new Node(6);
+
+        head.left.left.right = new Node(2);
+
+        head.right.left = new Node(7);
+        head.right.right = new Node(9);
+
+        System.out.println(getMaxSubBSTSize(head));
+
+    }
 
 
     public static class Info{
@@ -19,6 +42,13 @@ public class Code20_MaxSubBSTSize {
             this.allSize = allSize;
             this.max = max;
             this.min = min;
+        }
+    }
+        public static int getMaxSubBSTSize(Node head){
+            if (head == null){
+                return 0;
+            }
+            return process(head).maxBSTSubtreeSize;
         }
 
 
@@ -74,5 +104,5 @@ public class Code20_MaxSubBSTSize {
             return new Info(Math.max(p1, Math.max(p2, p3)), allSize, max, min);
 
         }
-    }
+
 }

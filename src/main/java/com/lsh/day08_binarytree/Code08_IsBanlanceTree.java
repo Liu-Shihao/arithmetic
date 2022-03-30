@@ -6,7 +6,7 @@ package com.lsh.day08_binarytree;
  * @desc ：判断一棵树是否是平衡树
  * 什么是平衡数？ 每一棵子树左树和右树的高度差不超过1
  */
-public class Code08_BanlanceTree {
+public class Code08_IsBanlanceTree {
 
     /**
      * 定义Info

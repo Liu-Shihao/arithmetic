@@ -5,8 +5,9 @@ package com.lsh.day08_binarytree;
  * @date ：Created in 2022/3/30 2:08 下午
  * @desc ：求二叉树某一节点的后继节点
  * 即求出在二叉树的中序遍历中这个节点下一位的节点
+ * 第一种方法:通过parent节点 找到头节点，然后遍历出中序 找到该节点的下一个节点，时间复杂度O(N)
+ * 第二种方法：从该节点直接找到它的后继节点（直接距离为K），时间复杂度为O(K)
  * 后继节点：
- *  这个节点的
  */
 public class Code17_SuccessorNode {
     public static class Node {

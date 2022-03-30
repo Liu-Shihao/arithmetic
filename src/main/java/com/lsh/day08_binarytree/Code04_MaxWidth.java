@@ -9,7 +9,7 @@ import java.util.Queue;
  * @date ：Created in 2022/3/29 8:45 下午
  * @desc ：二叉树的最大宽度
  */
-public class Code15_TreeMaxWidth {
+public class Code04_MaxWidth {
     //返回二叉树最大宽度 借助HashMap容器
     //使用HashMap标记每个节点为第几层
     public static int maxWidthUseMap(Node head) {

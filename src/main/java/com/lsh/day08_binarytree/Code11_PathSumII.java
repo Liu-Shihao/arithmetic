@@ -9,7 +9,7 @@ import java.util.List;
  * @desc ：收集达标路径和
  * https://leetcode.com/problems/path-sum-ii/
  */
-public class Code10_PathSumII {
+public class Code11_PathSumII {
 
     public static void process(Node x,List<Integer> path,int preSum,int sum,List<List<Integer>> listPath){
         if (x.left == null && x.right == null){

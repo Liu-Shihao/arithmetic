@@ -11,7 +11,7 @@ import java.util.LinkedList;
  * 方法2：递归，
  *
  */
-public class Code09_BinarySearchTree {
+public class Code09_IsSearchTree {
 
     public static void in(Node root,LinkedList<Integer> linkedList){
         if (root == null){
