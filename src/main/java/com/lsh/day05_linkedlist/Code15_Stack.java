@@ -1,4 +1,4 @@
-package com.lsh.day08_binarytree;
+package com.lsh.day05_linkedlist;
 
 import java.util.LinkedList;
 import java.util.Stack;
@@ -11,7 +11,7 @@ import java.util.Stack;
  * 2.使用数组实现栈功能   速度最快
  *
  */
-public class Code07_Stack {
+public class Code15_Stack {
 
     public static void main(String[] args) {
         long start = System.currentTimeMillis();

@@ -9,28 +9,17 @@ import java.util.LinkedList;
  * BinaryTreeLevelOrderTraversal
  */
 public class Code06_BinaryTreeLevelOrderTraversal {
-
-    public static class TreeNode {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
     /**
      *
      * @param root
      * @return
      */
-    public LinkedList<LinkedList<Integer>> levelOrderBottom(TreeNode root){
+    public LinkedList<LinkedList<Integer>> levelOrderBottom(Node root){
         LinkedList<LinkedList<Integer>> answer = new LinkedList<>();
         if (root == null){
             return answer;
         }
-        LinkedList<TreeNode> queue = new LinkedList<>();
+        LinkedList<Node> queue = new LinkedList<>();
         //新建LinkedList 将头节点放入
         queue.add(root);
         //如果queue 链表不为空
@@ -38,8 +27,8 @@ public class Code06_BinaryTreeLevelOrderTraversal {
             int size = queue.size();
             LinkedList<Integer> curAns = new LinkedList<>();
             for (int i = 0; i < size; i++) {
-                TreeNode curNode = queue.poll();
-                curAns.add(0,curNode.val);
+                Node curNode = queue.poll();
+                curAns.add(0,curNode.value);
                 if (curNode.left != null){
                     //如果 左节点 有元素，放入queue队列中
                     queue.add(curNode.left);

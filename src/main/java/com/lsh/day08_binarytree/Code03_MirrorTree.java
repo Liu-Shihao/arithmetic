@@ -9,17 +9,8 @@ package com.lsh.day08_binarytree;
  *    2   2
  *   3 1 1 3
  */
+
 public class Code03_MirrorTree {
-
-    public static class TreeNode{
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        public TreeNode(int v){
-            val = v;
-        }
-    }
 
     /**
      * 判断是否是镜像数
@@ -27,7 +18,7 @@ public class Code03_MirrorTree {
      * @param head2
      * @return
      */
-    public static Boolean isMirrorTree(TreeNode head1,TreeNode head2){
+    public static Boolean isMirrorTree(Node head1,Node head2){
 
         if (head1 == null ^ head2 == null){
             return false;
@@ -36,13 +27,13 @@ public class Code03_MirrorTree {
             return true;
         }
         // 头节点的左节点和头节点的右节点 相等
-        return head1.val == head2.val && isMirrorTree(head1.left,head2.right) && isMirrorTree(head1.right,head2.left);
+        return head1.value == head2.value && isMirrorTree(head1.left,head2.right) && isMirrorTree(head1.right,head2.left);
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(2);
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(2);
         System.out.println(isMirrorTree(root,root));
         System.out.println(isMirrorTree(root,null));
         System.out.println(isMirrorTree(null,null));

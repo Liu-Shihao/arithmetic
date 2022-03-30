@@ -13,22 +13,12 @@ import java.util.LinkedList;
  */
 public class Code09_BinarySearchTree {
 
-    public static class TreeNode {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
-    public static void in(TreeNode root,LinkedList<Integer> linkedList){
+    public static void in(Node root,LinkedList<Integer> linkedList){
         if (root == null){
             return ;
         }
         in(root.left,linkedList);
-        linkedList.add(root.val);
+        linkedList.add(root.value);
         in(root.right,linkedList);
     }
 
@@ -37,7 +27,7 @@ public class Code09_BinarySearchTree {
      * @param root
      * @return
      */
-    public static boolean isSearchTree1(TreeNode root){
+    public static boolean isSearchTree1(Node root){
         LinkedList<Integer> linkedList = new LinkedList<>();
         in(root,linkedList);
         Integer curNode = linkedList.pollFirst();
@@ -73,14 +63,14 @@ public class Code09_BinarySearchTree {
      * @param x
      * @return
      */
-    public static Info process(TreeNode x){
+    public static Info process(Node x){
         if (x == null){
             return null;
         }
         Info leftInfo = process(x.left);
         Info rightInfo = process(x.right);
-        int min = x.val;
-        int max = x.val;
+        int min = x.value;
+        int max = x.value;
 
         if (leftInfo != null){
             max = Math.max(leftInfo.max,max);
@@ -101,8 +91,8 @@ public class Code09_BinarySearchTree {
         }
         //左树最大值是否小于头节点，如果左树为空则返回true
         //右树最小值是否大于头节点，如果右树为空则也返回true
-        boolean leftMaxLessX = leftInfo == null ? true : (leftInfo.max < x.val);
-        boolean rightMinMoreX = rightInfo == null ? true : (rightInfo.min > x.val);
+        boolean leftMaxLessX = leftInfo == null ? true : (leftInfo.max < x.value);
+        boolean rightMinMoreX = rightInfo == null ? true : (rightInfo.min > x.value);
         //如果以上两个条件有一个不成立，则isBST = false
         // !(leftMaxLessX && rightMinMoreX)    <=>   (!leftMaxLessX || !rightMinMoreX)
         if (!(leftMaxLessX && rightMinMoreX)){
@@ -119,15 +109,15 @@ public class Code09_BinarySearchTree {
      * @param args
      */
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(5);
-        root.left = new TreeNode(3);
-        root.right = new TreeNode(7);
+        Node root = new Node(5);
+        root.left = new Node(3);
+        root.right = new Node(7);
 
-        root.left.left = new TreeNode(2);
-        root.left.right = new TreeNode(4);
+        root.left.left = new Node(2);
+        root.left.right = new Node(4);
 
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(8);
+        root.right.left = new Node(6);
+        root.right.right = new Node(8);
 
         System.out.println(isSearchTree1(root));
 

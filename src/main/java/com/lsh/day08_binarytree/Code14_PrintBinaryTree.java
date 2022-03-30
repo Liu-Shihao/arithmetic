@@ -6,17 +6,6 @@ package com.lsh.day08_binarytree;
  * @desc ：二叉树打印函数
  */
 public class Code14_PrintBinaryTree {
-    static class Node{
-        public Integer value;
-        public Node right;
-        public Node left;
-
-        public Node(int v){
-            value = v;
-            right = null;
-            left = null;
-        }
-    }
 
     public static void main(String[] args) {
         Node head = new Node(1);

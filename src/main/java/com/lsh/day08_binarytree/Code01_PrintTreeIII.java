@@ -10,18 +10,6 @@ import java.util.Queue;
  */
 public class Code01_PrintTreeIII {
 
-    static class Node{
-        public Integer value;
-        public Node right;
-        public Node left;
-
-        public Node(int v){
-            value = v;
-            right = null;
-            left = null;
-        }
-    }
-
     public static void main(String[] args) {
         Node node = new Node(1);
         node.left = new Node(2);

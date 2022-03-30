@@ -24,16 +24,6 @@ package com.lsh.day08_binarytree;
  */
 public class Code01_PrintTreeI {
 
-    public static class Node{
-        public int val;
-        public Node left;
-        public Node right;
-
-        public Node(int v){
-            val = v;
-        }
-    }
-
     public static void main(String[] args) {
         Node node = new Node(1);
         node.left = new Node(2);
@@ -77,7 +67,7 @@ public class Code01_PrintTreeI {
         if(head == null){
             return;
         }
-        System.out.print(head.val+" ");
+        System.out.print(head.value+" ");
         pre(head.left);
         pre(head.right);
     }
@@ -91,7 +81,7 @@ public class Code01_PrintTreeI {
             return;
         }
         in(head.left);
-        System.out.print(head.val+" ");
+        System.out.print(head.value+" ");
         in(head.right);
     }
     /**
@@ -104,6 +94,6 @@ public class Code01_PrintTreeI {
         }
         pos(head.left);
         pos(head.right);
-        System.out.print(head.val+" ");
+        System.out.print(head.value+" ");
     }
 }

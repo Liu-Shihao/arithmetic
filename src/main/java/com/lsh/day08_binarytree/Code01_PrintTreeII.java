@@ -16,15 +16,6 @@ import java.util.Stack;
  */
 public class Code01_PrintTreeII {
 
-    public static class Node{
-        public int val;
-        public Node left;
-        public Node right;
-
-        public Node(int v){
-            val = v;
-        }
-    }
 
     public static void main(String[] args) {
         /**
@@ -65,7 +56,7 @@ public class Code01_PrintTreeII {
         stack.push(head);
         while (!stack.isEmpty()){
             Node node = stack.pop();
-            System.out.print(node.val+" ");
+            System.out.print(node.value+" ");
             if (node.right != null){
                 stack.push(node.right);
             }
@@ -89,7 +80,7 @@ public class Code01_PrintTreeII {
                 head = head.left;//一直找到最后的左子节点
             } else {
                 head = stack.pop();
-                System.out.print(head.val + " ");
+                System.out.print(head.value + " ");
                 head = head.right;
             }
         }
@@ -121,7 +112,7 @@ public class Code01_PrintTreeII {
         //这样 第二个栈弹出的顺序就是倒序 ： 左 右 头
         while (!stack2.isEmpty()){
             Node node = stack2.pop();
-            System.out.print(node.val+" ");
+            System.out.print(node.value+" ");
         }
         System.out.println();
     }

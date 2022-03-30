@@ -10,16 +10,6 @@ package com.lsh.day08_binarytree;
  */
 public class Code10_PathSum {
 
-    public static class TreeNode {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
     /**定义全局布尔类型变量*/
     public static boolean hasPathSum = false;
 
@@ -28,15 +18,15 @@ public class Code10_PathSum {
      * @param preSum  上一个路径节点和
      * @param sum   要求的路径和
      */
-    public static void process(TreeNode x,int preSum,int sum){
+    public static void process(Node x,int preSum,int sum){
         if (x.left == null && x.right==null){
             //到达链路末尾节点
-            if (x.val + preSum == sum){
+            if (x.value + preSum == sum){
                 hasPathSum = true;
             }
             return ;
         }
-        preSum += x.val;
+        preSum += x.value;
         if (x.left != null){
             process(x.left,preSum,sum);
         }
@@ -48,7 +38,7 @@ public class Code10_PathSum {
 
 
 
-    public static boolean hasPathSum(TreeNode root, int targetSum) {
+    public static boolean hasPathSum(Node root, int targetSum) {
         if (root == null){
             return false;
         }
@@ -58,15 +48,15 @@ public class Code10_PathSum {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(5);
-        root.left = new TreeNode(3);
-        root.right = new TreeNode(7);
+        Node root = new Node(5);
+        root.left = new Node(3);
+        root.right = new Node(7);
 
-        root.left.left = new TreeNode(2);
-        root.left.right = new TreeNode(4);
+        root.left.left = new Node(2);
+        root.left.right = new Node(4);
 
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(8);
+        root.right.left = new Node(6);
+        root.right.right = new Node(8);
         int targetSum = 12;
         System.out.println(hasPathSum(root,targetSum));
     }

@@ -11,28 +11,18 @@ import java.util.List;
  */
 public class Code10_PathSumII {
 
-    public static class TreeNode {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
-    public static void process(TreeNode x,List<Integer> path,int preSum,int sum,List<List<Integer>> listPath){
+    public static void process(Node x,List<Integer> path,int preSum,int sum,List<List<Integer>> listPath){
         if (x.left == null && x.right == null){
-            if (preSum + x.val == sum){
-                path.add(x.val);
+            if (preSum + x.value == sum){
+                path.add(x.value);
                 listPath.add(copy(path));
                 //在return之前需要将此元素在列表中删除，因为此时递归方法将要返回，到达右树位置
                 path.remove(path.size()-1);
                 return;
             }
         }
-        path.add(x.val);
-        preSum += x.val;
+        path.add(x.value);
+        preSum += x.value;
         if (x.left != null){
             process(x.left,path,preSum,sum,listPath);
         }
@@ -50,7 +40,7 @@ public class Code10_PathSumII {
     }
 
 
-    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+    public List<List<Integer>> pathSum(Node root, int targetSum) {
         List<List<Integer>> ans = new ArrayList<>();
         if (root == null) {
             return ans;

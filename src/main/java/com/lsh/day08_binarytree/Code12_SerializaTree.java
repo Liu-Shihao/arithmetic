@@ -20,17 +20,6 @@ import java.util.Stack;
  *
  */
 public class Code12_SerializaTree   {
-    static class Node{
-        public Integer value;
-        public Node right;
-        public Node left;
-
-        public Node(int v){
-            value = v;
-            right = null;
-            left = null;
-        }
-    }
 
     public static void main(String[] args) {
         Node head = new Node(1);

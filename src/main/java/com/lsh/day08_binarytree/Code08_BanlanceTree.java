@@ -8,16 +8,6 @@ package com.lsh.day08_binarytree;
  */
 public class Code08_BanlanceTree {
 
-    public static class TreeNode {
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-    }
-
     /**
      * 定义Info
      * height为 树的高度是什么？
@@ -41,7 +31,7 @@ public class Code08_BanlanceTree {
         }
     }
 
-    public static Info process(TreeNode x){
+    public static Info process(Node x){
         if (x == null){
             return new Info(true,0);
         }
@@ -59,17 +49,17 @@ public class Code08_BanlanceTree {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(0);
-        root.left = new TreeNode(1);
-        root.right = new TreeNode(1);
+        Node root = new Node(0);
+        root.left = new Node(1);
+        root.right = new Node(1);
 
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(1);
+        root.left.left = new Node(1);
+        root.left.right = new Node(1);
 //        root.right.left = new TreeNode(1);
 //        root.right.right = new TreeNode(1);
 
-        root.left.left.left = new TreeNode(1);
-        root.left.right.right = new TreeNode(1);
+        root.left.left.left = new Node(1);
+        root.left.right.right = new Node(1);
 //        root.right.left.left = new TreeNode(1);
 //        root.right.right.right = new TreeNode(1);
 

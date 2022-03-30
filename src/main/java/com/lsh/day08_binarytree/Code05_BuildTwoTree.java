@@ -14,18 +14,6 @@ import java.util.HashMap;
  */
 public class Code05_BuildTwoTree {
 
-
-
-    public static class TreeNode{
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        public TreeNode(int v){
-            val = v;
-        }
-    }
-
     /**
      * 有一棵树，先序数组是pre[L1..R1] 中序数组是 in[L2..R2]
      * 请建出二叉树并返回头节点
@@ -37,11 +25,11 @@ public class Code05_BuildTwoTree {
      * @param R2    中序数组右边界
      * @return
      */
-    public static TreeNode f(int[] pre,int L1,int R1,int[] in,int L2,int R2){
+    public static Node f(int[] pre,int L1,int R1,int[] in,int L2,int R2){
         if (L1>R1){
             return null;
         }
-        TreeNode head = new TreeNode(pre[L1]);
+        Node head = new Node(pre[L1]);
         if (L1 == R1){
             return head;
         }
@@ -69,11 +57,11 @@ public class Code05_BuildTwoTree {
      * @param valueIndexMap
      * @return
      */
-    public static TreeNode g(int[] pre,int L1,int R1,int[] in,int L2,int R2,HashMap<Integer,Integer> valueIndexMap){
+    public static Node g(int[] pre,int L1,int R1,int[] in,int L2,int R2,HashMap<Integer,Integer> valueIndexMap){
         if (L1>R1){
             return null;
         }
-        TreeNode head = new TreeNode(pre[L1]);
+        Node head = new Node(pre[L1]);
         if (L1 == R1){
             return head;
         }
@@ -106,20 +94,20 @@ public class Code05_BuildTwoTree {
     }
 
 
-    public static void pre(TreeNode head){
+    public static void pre(Node head){
         if (head == null){
             return;
         }
-        System.out.print(head.val+" ");
+        System.out.print(head.value +" ");
         pre(head.left);
         pre(head.right);
     }
-    public static void in(TreeNode head){
+    public static void in(Node head){
         if (head == null){
             return;
         }
         in(head.left);
-        System.out.print(head.val+" ");
+        System.out.print(head.value +" ");
         in(head.right);
     }
 
@@ -130,7 +118,7 @@ public class Code05_BuildTwoTree {
         int[] pre = {1, 2 ,3, 4, 5,6};
         int[] in = {2, 1, 5, 4, 6, 3};
 //        TreeNode head = f(pre, 0, 6, in, 0, 6);
-        TreeNode head = g(pre, 0, 5, in, 0, 5, valueIndexMap(in));
+        Node head = g(pre, 0, 5, in, 0, 5, valueIndexMap(in));
         pre(head);
         System.out.println();
         in(head);

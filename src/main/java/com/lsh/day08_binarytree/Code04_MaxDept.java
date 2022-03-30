@@ -8,17 +8,8 @@ package com.lsh.day08_binarytree;
  */
 public class Code04_MaxDept {
 
-    public static class TreeNode{
-        public int val;
-        public TreeNode left;
-        public TreeNode right;
-
-        public TreeNode(int v){
-            val = v;
-        }
-    }
     // 以root为头的树，最大高度是多少返回！
-    public static int maxDept(TreeNode root){
+    public static int maxDept(Node root){
         if (root == null){
             return 0;
         }
@@ -33,15 +24,15 @@ public class Code04_MaxDept {
      * @param args
      */
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(0);
-        root.left = new TreeNode(1);
-        root.right = new TreeNode(1);
+        Node root = new Node(0);
+        root.left = new Node(1);
+        root.right = new Node(1);
 
-        root.left.left = new TreeNode(1);
-        root.left.right = new TreeNode(1);
+        root.left.left = new Node(1);
+        root.left.right = new Node(1);
 
-        root.left.left.left = new TreeNode(1);
-        root.left.right.right = new TreeNode(1);
+        root.left.left.left = new Node(1);
+        root.left.right.right = new Node(1);
 
         System.out.println(maxDept(root));
     }
