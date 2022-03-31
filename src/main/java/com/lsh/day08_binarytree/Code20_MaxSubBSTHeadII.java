@@ -34,14 +34,12 @@ public class Code20_MaxSubBSTHeadII {
     public static class Info{
         public Node maxBSTSubtreeHead;//最大搜索树的头节点
         public int maxBSTSubtreeSize;//最大搜索树的节点数
-        public int allSIze;//以当节点为二叉树的所有节点数
         public int max;//左树最大值要比x小
         public int min;//右树最小值要比x大
 
-        public Info(Node maxBSTSubtreeHead,int maxBSTSubtreeSize,int allSIze,int max,int min){
+        public Info(Node maxBSTSubtreeHead,int maxBSTSubtreeSize,int max,int min){
             this.maxBSTSubtreeHead = maxBSTSubtreeHead;
             this.maxBSTSubtreeSize = maxBSTSubtreeSize;
-            this.allSIze = allSIze;
             this.max = max;
             this.min = min;
         }
@@ -61,49 +59,37 @@ public class Code20_MaxSubBSTHeadII {
             }
             Info leftInfo = process(node.left);//获得左数信息
             Info rightInfo = process(node.right);//获得右树信息
-            Node maxBSTSubtreeHead ;
+            Node maxBSTSubtreeHead = null;
             int max = node.value;
             int min = node.value;
-            int allSize = 1;
-            int maxBSTSubtreeSize ;
+            int maxBSTSubtreeSize = 0 ;
             //分析可能性：
             if (leftInfo != null) {
-                max = leftInfo.max;
-                min = leftInfo.min;
-                allSize += leftInfo.allSIze;
+                max = Math.max(leftInfo.max, max);
+                min = Math.min(leftInfo.min, min);
+                maxBSTSubtreeHead = leftInfo.maxBSTSubtreeHead;
+                maxBSTSubtreeSize = leftInfo.maxBSTSubtreeSize;
             }
             if (rightInfo != null) {
-                max = rightInfo.max;
-                min = rightInfo.min;
-                allSize += rightInfo.allSIze;
-            }
-            int p1 = -1;
-            if (leftInfo != null) {
-                p1 = leftInfo.maxBSTSubtreeSize;//第一种可能性：左树的最大搜索二叉树的所有节点
-            }
-            int p2 = -1;//最大搜索树的节点数的 第二种可能性 ： 右树的最大搜索二叉树的所有节点
-            if (rightInfo != null) {
-                p2 = rightInfo.maxBSTSubtreeSize;
-            }
-            int p3 = -1;
-            //判断以自己为节点的二叉树是否是搜索树：左和右树都是搜索树，并且 左树最大值<x<右树最小值
-            boolean isLeftBST = leftInfo == null ? true : leftInfo.maxBSTSubtreeSize == leftInfo.allSIze;
-            boolean isRightBST = rightInfo == null ? true : rightInfo.maxBSTSubtreeSize == rightInfo.allSIze;
-
-            if (isLeftBST && isRightBST ){
-                boolean leftMaxLessX = leftInfo == null ? true : (leftInfo.max < node.value);
-                boolean rightMinMoreX = rightInfo == null ? true : (node.value < rightInfo.min);
-                if (leftMaxLessX && rightMinMoreX) {
-                    //如果以上条件都成立，则说明该节点本身也是一个搜索二叉树
-                    int leftSize = leftInfo == null ? 0 : leftInfo.allSIze;
-                    int rightSize = rightInfo == null ? 0 : rightInfo.allSIze;
-                    p3 = leftSize + rightSize +1;
+                max = Math.max(rightInfo.max, max);
+                min = Math.min(rightInfo.min, min);
+                if (rightInfo.maxBSTSubtreeSize > maxBSTSubtreeSize) {
+                    maxBSTSubtreeHead = rightInfo.maxBSTSubtreeHead;
+                    maxBSTSubtreeSize = rightInfo.maxBSTSubtreeSize;
                 }
             }
-            maxBSTSubtreeSize = Math.max(p1, Math.max(p2, p3));
-            maxBSTSubtreeHead = maxBSTSubtreeSize == p1 ? node.left : maxBSTSubtreeSize == p2 ? node.right : node;
-            //整合信息，返回该节点的信息
-            return new Info(maxBSTSubtreeHead,maxBSTSubtreeSize,allSize,max,min);
+            //判断左树节点是否是搜索二叉树的头节点
+            //判断右树节点是否是搜索二叉树的头节点
+            //并且判断左树最大值是否小于节点值，右树最小值是都大于节点值
+            //如果以上条件都满足，则该节点就是最大搜索二叉子树
+
+            if ((leftInfo == null ? true : (leftInfo.maxBSTSubtreeHead == node.left && leftInfo.max < node.value))
+                    && (rightInfo == null ? true : (rightInfo.maxBSTSubtreeHead == node.right && rightInfo.min > node.value))) {
+                maxBSTSubtreeHead = node;
+                maxBSTSubtreeSize = (leftInfo == null ? 0 : leftInfo.maxBSTSubtreeSize)
+                        + (rightInfo == null ? 0 : rightInfo.maxBSTSubtreeSize) + 1;
+            }
+            return new Info(maxBSTSubtreeHead,maxBSTSubtreeSize,max,min);
         }
 
 }
