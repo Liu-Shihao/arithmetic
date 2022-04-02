@@ -17,6 +17,8 @@ public class Code05_Light {
         System.out.println(minLight2(road));
     }
 
+    //TODO 暴力解  2022年04月02日19:03:22
+
     //贪心解
     public static int minLight2(String road) {
         if (road == null || road.length() == 0) {
