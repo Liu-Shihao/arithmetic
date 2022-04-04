@@ -18,7 +18,7 @@ package com.lsh.day13_union;
  * 合并i和j，那他们对应的自己的朋友圈也会融合在一起。返回最后的朋友圈数
  *
  */
-public class Code02_Leetcode547 {
+public class Code02_NumberOfProvinces {
 
     public int findCircleNum(int[][] isConnected) {
         int N =  isConnected.length;
@@ -36,7 +36,7 @@ public class Code02_Leetcode547 {
         return unionFind.sets;
     }
 
-
+    //用数组方式实现并查集（使用HashMap表没有数组快）
     public static class UnionFind{
         //parents[i] = K : i节点的父节点是K
         public int[] parents;
