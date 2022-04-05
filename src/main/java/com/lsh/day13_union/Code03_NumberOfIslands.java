@@ -23,7 +23,7 @@ import java.util.Stack;
  * ]
  * Output: 1
  */
-public class Code03_NumberOfLands {
+public class Code03_NumberOfIslands {
 
     //一、递归解  复杂度 矩阵 m * n   时间复杂度O(m*n)
     public static int numIslands1(char[][] grid){
