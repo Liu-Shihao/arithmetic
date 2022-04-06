@@ -17,7 +17,7 @@ import java.util.*;
  * graph = {0,1,2,3#1,4#2,4,5#3,4,5#4#5}
  * [0, 1, 2, 3, 4, 5]
  */
-public class Code04_TopologySorti {
+public class Code03_TopologySorti {
 
     class DirectedGraphNode {
        int label;//自己
