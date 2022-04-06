@@ -10,7 +10,7 @@ import java.util.List;
  * @date ：Created in 2022/4/6 4:56 下午
  * @desc ：另一种拓扑排序方式：深度
  */
-public class Code05_TopologySortii {
+public class Code03_TopologySortii {
 
     class DirectedGraphNode {
         int label;//自己
