@@ -1,4 +1,4 @@
-package com.lsh.day10_dp;
+package com.lsh.day16_dp;
 
 /**
  * @author ：LiuShihao
@@ -6,7 +6,7 @@ package com.lsh.day10_dp;
  * @desc ：动态规划（DynamicProgramming）与暴力破解：经典背包问题
  * 有两个数组表示货物的重量和价值 （两个数组长度一样），往背包里装货物，在背包装满前价值最大。
  */
-public class Code01_DynamicProgram_Bag {
+public class Code01_Bag {
 
     public static void main(String[] args) {
         int[] weight = {2,4,1,6,8,4,3};

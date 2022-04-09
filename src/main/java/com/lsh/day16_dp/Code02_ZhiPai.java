@@ -1,4 +1,4 @@
-package com.lsh.day10_dp;
+package com.lsh.day16_dp;
 
 /**
  * @author ：LiuShihao
@@ -6,7 +6,7 @@ package com.lsh.day10_dp;
  * @desc ： 纸牌问题  先后手拿牌，最后拿到的牌和最大
  * 暴力破解与动态规划
  */
-public class Code02_DynamicProgram_ZhiPai {
+public class Code02_ZhiPai {
     public static void main(String[] args) {
         int[] arr = {2,8,4,3,7,10};
 

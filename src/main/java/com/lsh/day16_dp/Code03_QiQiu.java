@@ -1,4 +1,4 @@
-package com.lsh.day10_dp;
+package com.lsh.day16_dp;
 
 /**
  * @author ：LiuShihao
@@ -11,7 +11,7 @@ package com.lsh.day10_dp;
  * 例如：如果打爆第一个气球：1(系数为0)x3x2(系数为2)
  *
  */
-public class Code03_DynamicProgram_QiQiu {
+public class Code03_QiQiu {
 
     public static void main(String[] args) {
         int[] arr = {3,1,6,3,7,5,9,12,4,10,56,20,19,45};
