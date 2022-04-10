@@ -3,10 +3,14 @@ package com.lsh.day16_dp;
 /**
  * @author ：LiuShihao
  * @date ：Created in 2022/2/21 8:14 下午
- * @desc ：动态规划（DynamicProgramming）与暴力破解：经典背包问题
- * 有两个数组表示货物的重量和价值 （两个数组长度一样），往背包里装货物，在背包装满前价值最大。
+ * @desc ：从暴力破解到动态规划：经典背包问题
+ * 给定两个长度都为N的数组weights和values，
+ * weights[i]和values[i]分别代表 i号物品的重量和价值。
+ * 给定一个正数bag，表示一个载重bag的袋子，
+ * 你装的物品不能超过这个重量。
+ * 返回你能装下最多的价值是多少?
  */
-public class Code01_Bag {
+public class Code04_Bag {
 
     public static void main(String[] args) {
         int[] weight = {2,4,1,6,8,4,3};

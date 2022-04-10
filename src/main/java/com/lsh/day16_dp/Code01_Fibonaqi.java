@@ -24,13 +24,11 @@ public class Code01_Fibonaqi {
         }
         return  f1(n-1)+ f1(n-2);
     }
-
+    // 优化升级：加缓存
     public static int f2(int n){
         HashMap<Integer, Integer> map = new HashMap<>();
         return dp(n,map);
     }
-
-    //动态规划
     public static int dp(int n, HashMap<Integer,Integer> map){
         if (map.containsKey(n)){
             return map.get(n);
@@ -42,6 +40,11 @@ public class Code01_Fibonaqi {
             map.put(n,ans);
             return ans;
         }
+    }
+
+    public static int f3(int n){
+        int[][] map = new int[n+1][n+1];
+        return 0;
 
     }
 
