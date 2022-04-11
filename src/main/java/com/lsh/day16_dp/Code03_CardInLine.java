@@ -17,9 +17,14 @@ package com.lsh.day16_dp;
  */
 public class Code03_CardInLine {
     public static void main(String[] args) {
-        int[] arr = {2,8,4,3,7,10};
-        // 先：10 3 8
-        // 后：7 4 2
+//        int[] arr = {2,8,4,3,7,10};
+//        // 先：10 3 8
+//        // 后：7 4 2
+//        System.out.println(win1(arr));
+//        System.out.println(win2(arr));
+//        System.out.println(win3(arr));
+
+        int[] arr = { 5, 7, 4, 5, 8, 1, 6, 0, 3, 4, 6, 1, 7 };
         System.out.println(win1(arr));
         System.out.println(win2(arr));
         System.out.println(win3(arr));

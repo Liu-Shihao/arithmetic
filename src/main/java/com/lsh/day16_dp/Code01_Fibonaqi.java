@@ -15,6 +15,7 @@ public class Code01_Fibonaqi {
 
         System.out.println(f1(9));
         System.out.println(f2(9));
+        System.out.println(f3(9));
 
     }
     //递归方法
@@ -43,9 +44,14 @@ public class Code01_Fibonaqi {
     }
 
     public static int f3(int n){
-        int[][] map = new int[n+1][n+1];
-        return 0;
-
+        int[] map = new int[n+1];
+        map[1] = 1;
+        map[2] = 1;
+        for (int i = 3; i <= n; i++) {
+            map[i]= map[i-1] + map[i-2];
+        }
+        return map[n];
     }
+
 
 }
