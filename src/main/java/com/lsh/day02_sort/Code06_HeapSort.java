@@ -54,7 +54,7 @@ public class Code06_HeapSort {
 
     /**
      * 下沉节点
-     * 不断和自己的左右孩子比较，知道没有孩子或者没有左右孩子比自己大。
+     * 不断和自己的左右孩子比较，直到没有孩子或者没有左右孩子比自己大。
      * @param arr
      * @param index
      * @param heapSize

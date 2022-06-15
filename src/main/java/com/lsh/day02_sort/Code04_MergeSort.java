@@ -81,9 +81,11 @@ public class Code04_MergeSort {
      */
     public static void merge(int[] arr,int L ,int M,int R){
         int[] help = new int[R-L+1];
-        int index = 0 ;
-        int p1 = L;
-        int p2 = M + 1;
+        int index = 0, p1 = L, p2 = M+1;
+//        int index = 0 ;
+//        int p1 = L;
+//        int p2 = M + 1;
+
         //p1 和 p2 都没有越界
         while (p1 <= M && p2 <= R){
             help[index++] = arr[p1] <= arr[p2] ? arr[p1++] : arr[p2++];
