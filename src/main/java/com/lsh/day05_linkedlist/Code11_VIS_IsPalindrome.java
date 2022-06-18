@@ -45,8 +45,9 @@ public class Code11_VIS_IsPalindrome {
             Node pop = stack.pop();
             if (node.value != pop.value) {
                 bool = false;
+                break;
             }
-            break;
+            node = node.next;
         }
         return bool;
     }

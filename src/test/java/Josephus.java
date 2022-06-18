@@ -8,19 +8,18 @@
  *  两种方法：
  *  1.总结公式：
  *  2.构建环状链表 通过计数器控制报数，提出节点 最后剩余一个自己执指向自己的节点
- *
  */
 public class Josephus {
 
     public static void main(String[] args) {
 
-        System.out.println(Josephus1(6, 5));
+        System.out.println(Josephus1(6, 2));
         System.out.println(Josephus2(6, 5));
 
     }
 
     public static int Josephus1(int n,int k){
-        int s = 0;//
+        int s = 1;
         for (int i = 1; i <= n; i++) {
             s = (s+k)%i;
         }
