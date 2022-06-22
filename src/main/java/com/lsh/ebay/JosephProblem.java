@@ -1,4 +1,4 @@
-package com.lsh;
+package com.lsh.ebay;
 
 /**
  * @author ：LiuShihao
@@ -8,15 +8,26 @@ package com.lsh;
 public class JosephProblem {
 
     public static void main(String[] args) {
-//        System.out.println(joseph1(6,2));
-//        System.out.println(joseph2(6,2));
+        System.out.println(joseph1(6,2));
+        System.out.println(joseph2(6,2));
         System.out.println(joseph3(6,2));
     }
 
-
-    //规律
+    /**
+     * 题目是从n个人开始，每次减少一个人，最终只剩下一个人
+     * 每减少一个人，胜利者的位置-k，例如：
+     * 1 2 3 4 5 6 m=6 k = 5
+     * 第一次5被杀掉，6则从1开始，所以 胜利者位置也减掉5
+     * 逆向思考：
+     * 从1个人开始，那这个人一定是胜利者，然后人数递增，从而推算胜利者的位置
+     * 每增加一个人，胜利者的位置+k
+     * 所以 假设s代表胜利者的位置，每增加一个人 s = s+k
+     * 并且当超过总人数时，从头开始，所以需要对s+k做取余操作
+     * 即 s = (s+k)%i,i为当前的人数
+     * 并且最终返回的结果要+1，因为数组编号是从0开始
+     */
     public static int joseph1(int m ,int k){
-        int s = 1;//存活者编号
+        int s = 0;//存活者编号
         for (int i = 1; i <= m ; i++) {
             s = (s+k)%i;
         }
