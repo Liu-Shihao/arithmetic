@@ -82,7 +82,7 @@ public class Code01_UnionFind {
         public void union(V a,V b){
             Node<V> father1 = findFather(nodes.get(a));
             Node<V> father2 = findFather(nodes.get(b));
-            while (father1 != father2) {
+            if (father1 != father2) {
                 //如果a和b不在同一个集合
                 Integer size1 = sizeMap.get(father1);
                 Integer size2 = sizeMap.get(father2);

@@ -53,7 +53,7 @@ public class Code200_NumberOfLands {
     public static int numIslands2(char[][] board){
         int row = board.length;//表示行
         int col = board[0].length;//表示列
-        //建立一个和入参一样的Dot矩阵
+        //建立一个和入参一样的Dot矩阵 Dot：点
         Dot[][] dots = new Dot[row][col];
         List<Dot> dotList = new ArrayList<>();
         for (int i = 0; i < row; i++) {
@@ -105,7 +105,6 @@ public class Code200_NumberOfLands {
     public static class Node<V> {
         //节点本身
         V value;
-        //指向上级父节点
         public Node(V v) {
             value = v;
         }
@@ -116,7 +115,7 @@ public class Code200_NumberOfLands {
         public HashMap<V, Node<V>> nodes;
         public HashMap<Node<V>, Node<V>> parents;
         public HashMap<Node<V>, Integer> sizeMap;
-        //初始化并查集
+        //初始化并查集 List<Dot>
         public UnionFind1(List<V> values) {
             nodes = new HashMap<>();
             parents = new HashMap<>();
